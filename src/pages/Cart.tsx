@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Button, Card, Container, Row } from "react-bootstrap";
+import CartProduct from "../components/CartProduct";
+import {useSelector,useDispatch} from "react-redux"
 
 function Cart() {
   return (
-    <div>Cart</div>
-  )
+    <>
+		<CartProduct/>
+    </>
+	);
 }
 
-export default Cart
+export default Cart;
