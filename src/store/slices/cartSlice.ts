@@ -1,22 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit";
+import type { PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit";
 
 type State = { id: number; qty: number }[];
 
 const cartSlice = createSlice<State, SliceCaseReducers<State>>({
 	name: "Cart",
-	initialState: [],
+  initialState: [],
 	reducers: {
 		addTocart(
 			state,
 			{ payload: { id, qty } }: PayloadAction<{ id: number; qty: number }>
-		): void {
-			const prodInCart = state.find((prod) => prod.id === id);
+    ): void {
+      const prodInCart = state.find((prod) => prod.id === id);
 			if (prodInCart) {
 				prodInCart.qty += qty;
 				return;
-			}
-			state.push({ id, qty });
+      }
+      console.log("here")
+      state.push({ id, qty });
 		},
 		removeFromCart(state, { payload: id }: PayloadAction<number>) {
 			state = state.filter((prod) => prod.id !== id);
@@ -34,6 +35,8 @@ const cartSlice = createSlice<State, SliceCaseReducers<State>>({
 	},
 });
 
-export const {addTocart,removeFromCart} = cartSlice.actions;
+export const selectCartProducts=(state:any)=>state.cart
+
+export const {addTocart,removeFromCart,decreaseAmountInCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

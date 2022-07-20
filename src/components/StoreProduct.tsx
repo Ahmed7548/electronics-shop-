@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { Card,Button, Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 import { currencyFormater } from "../utils/formatCurrency";
+import { useDispatch } from "react-redux"
+import {addTocart} from "../store/slices/cartSlice"
 
 
 interface ProductData {
@@ -14,7 +16,8 @@ interface ProductData {
 
 function StoreProduct({ item }: { item: ProductData }) {
   const navigate = useNavigate()
-  const buttonRef= useRef<HTMLButtonElement>()
+  const buttonRef = useRef<HTMLButtonElement>()
+  const dispatch= useDispatch()
 
   const handelCartClick = (e:React.MouseEvent<HTMLElement, MouseEvent>):void => {
     if (e.target !== buttonRef.current) {
@@ -22,6 +25,7 @@ function StoreProduct({ item }: { item: ProductData }) {
       navigate(`/${item.id}`)
     }
     // add to cart code
+    dispatch(addTocart({id:item.id,qty:1}))
   }
   
   return (
