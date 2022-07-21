@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit";
 
-type State = { id: number; qty: number }[];
+export type State = { id: number; qty: number }[];
 
 const cartSlice = createSlice<State, SliceCaseReducers<State>>({
 	name: "Cart",

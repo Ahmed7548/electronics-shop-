@@ -1,10 +1,14 @@
 import React from "react";
 import { Container, Nav, Navbar as Navbarbs } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import ShoppingCartButton from "./ShoppingCartButton";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCartProducts, State } from "../store/slices/cartSlice";
+import { Store } from "../store/app/store";
 
 function NavBar() {
+	
+	const cartItems= useSelector<Store,State>(selectCartProducts).length
 
 	return (
 		<Navbarbs sticky="top" className="bg-white shadow-sm mb-3">
@@ -20,7 +24,7 @@ function NavBar() {
 						About
 					</Nav.Link>
 				</Nav>
-			<ShoppingCartButton number={3}/>
+			<ShoppingCartButton number={cartItems}/>
 			</Container>
 		</Navbarbs>
 	);
