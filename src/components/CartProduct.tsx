@@ -19,6 +19,7 @@ function CartProduct({ product }: { product: { id: number; qty: number } }) {
 		if (e.target === incermentButton.current) {
 			dispatch(addTocart({ id: product.id, qty: 1 }));
 		} else if (e.target === decrementButton.current) {
+			console.log("here")
 			dispatch(decreaseAmountInCart(product.id));
 		}
 	};
@@ -67,7 +68,7 @@ function CartProduct({ product }: { product: { id: number; qty: number } }) {
 				</div>
 				<div className="ms-1">
 					total price:{" "}
-					<span className="text-muted fs-5">
+					<span className="text-muted fs-6">
 						{currencyFormater(product.qty * productData.price)}
 					</span>
 				</div>

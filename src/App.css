@@ -1,5 +1,6 @@
 :root {
-  --cart-ele-width:100%;
+  --cart-ele-width:90%;
+  --cart-container-width:100%;
   --prod-img-width:500px
 }
 
@@ -16,6 +17,11 @@
   width: var(--cart-ele-width);
 }
 
+.cart-container{
+  width: var(--cart-container-width);
+}
+
+
 .small-button {
   transform: rotate(90deg);
 }
@@ -23,5 +29,8 @@
 @media (min-width:576px){
   .cart-element {
     --cart-ele-width:clamp(500px,80vw,576px)
+  }
+  .cart-container{
+    --cart-container-width:clamp(calc(500px + 10%),85vw,calc(576px + 10%))
   }
 }

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function Cart() {
 	const navigate = useNavigate();
-	const products = useSelector<Store, State>(selectCartProducts);
+  const products = useSelector<Store, State>(selectCartProducts);
 
 	const keepShopping = () => {
 		// a better feeture is to return to what ever the past route is
@@ -18,7 +18,7 @@ function Cart() {
 
 	return (
 		<>
-			<div className=" m-auto p-3 bg-white cart-element">
+			<div className=" m-auto p-3 bg-white cart-container">
 				{products.length ? (
 					products.map((product) => (
 						<CartProduct product={product} key={product.id} />
@@ -31,7 +31,7 @@ function Cart() {
 						{" "}
 						Keep Shopping
 					</Button>
-					<Button variant="outline-dark"> Proceed To Checkout</Button>
+					{products.length>0&&<Button variant="outline-dark"> Proceed To Checkout</Button>}
 				</div>
 			</div>
 		</>

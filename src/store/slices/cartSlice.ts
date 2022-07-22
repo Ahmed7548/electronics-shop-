@@ -16,18 +16,16 @@ const cartSlice = createSlice<State, SliceCaseReducers<State>>({
 				prodInCart.qty += qty;
 				return;
       }
-      console.log("here")
       state.push({ id, qty });
 		},
 		removeFromCart(state, { payload: id }: PayloadAction<number>) {
-			state = state.filter((prod) => prod.id !== id);
+			return state.filter((prod) => prod.id !== id);
     },
-    decreaseAmountInCart(state, { payload:id }: PayloadAction<number>):void {
+    decreaseAmountInCart(state, { payload:id }: PayloadAction<number>) {
       const pordInCart = state.find(prod => prod.id === id)
       if (pordInCart) {
         if (pordInCart.qty === 1) {
-          state = state.filter((prod) => prod.id !== id);
-          return
+          return state.filter(prod=>prod.id!==id)
         }
         pordInCart.qty-=1
       }
