@@ -1,14 +1,13 @@
 import { Button} from "react-bootstrap";
 import CartProduct from "../components/CartProduct";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCartProducts, State } from "../store/slices/cartSlice";
+import { selectCartProducts } from "../store/slices/cartSlice";
 import EmptyCart from "../components/EmptyCart";
-import { Store } from "../store/app/store";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../store/app/store";
 
 function Cart() {
 	const navigate = useNavigate();
-  const products = useSelector<Store, State>(selectCartProducts);
+  const products = useAppSelector(selectCartProducts);
 
 	const keepShopping = () => {
 		// a better feeture is to return to what ever the past route is
