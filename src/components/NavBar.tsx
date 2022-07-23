@@ -22,9 +22,9 @@ function NavBar({categories}:{categories:Categories[]}) {
 					<Nav.Link to="/store" as={NavLink}>
 						Store
 					</Nav.Link>
-						<NavDropdown title="categories">
+						<NavDropdown menuVariant="dark" title="categories">
 							{categories.map(category => (
-						<NavDropdown.Item key={category.id}>{category.name}</NavDropdown.Item>
+								<NavDropdown.Item as={NavLink} to={`/store/${category.name}`} key={category.id}>{category.name}</NavDropdown.Item>
 							))}
 					</NavDropdown>
 					<Nav.Link to="/about" as={NavLink}>

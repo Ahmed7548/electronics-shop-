@@ -8,13 +8,10 @@ export interface ProductState{
 }
 
 
-export const fetchProducts = createAsyncThunk("products/getproducts", async (reqBody: {
-  cat?: string;
-  search?:string 
-}): Promise<Product[]> => {
+export const fetchProducts = createAsyncThunk("products/getproducts", async (req: { param?: string|null; search?:string|null},thunkApi): Promise<Product[]> => {
   let getUrl = "/products?"
-  if(reqBody.cat) getUrl+=`cat=${reqBody.cat}`
-  if(reqBody.search) getUrl+=`name=${reqBody.cat}`
+  if(req.param) getUrl+=`cat=${req.param}`
+  if (req.search) getUrl += `name=${req.search}`
   const {data}=await api.get(getUrl) 
   return data as Product[]
 })

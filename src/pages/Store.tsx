@@ -6,6 +6,7 @@ import useGetStoreProducts from "../hooks/useGetStoreProducts";
 
 function Store() {
 	const products = useGetStoreProducts()
+	console.log(products)
 	return (
 		<>
       <Row lg={3} md={2} sm={1} xs={1} className="g-5">

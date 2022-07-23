@@ -22,7 +22,9 @@ function App() {
 			<Container fluid="sm" className="mb-4">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/store" element={<Store />} />
+					<Route path="/store" element={<Store />} >
+						<Route path=":cat" element={<Store/>} />
+					</Route>
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
 				</Routes>
