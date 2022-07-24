@@ -13,19 +13,22 @@ export interface Product {
 
 
 const useGetStoreProducts = (): [Product[] ,LoadingStatue, React.Dispatch<React.SetStateAction<number>>,()=>void]=> {
-	const [page,setPage]=useState(1)
-	const {cat} = useParams()
+	
+	const [page, setPage] = useState(1)
+	
+	const { cat } = useParams()
+	
 	const [searchParams, setSearchparams] = useSearchParams();
+
 	const dispatch = useAppDispatch()
 	const {products,loading}=useAppSelector(productSelector)
 
-	console.log(page)
 	const getProducts = () => {
-		console.log("getting products")
 		dispatch(fetchProducts({param:cat,search:searchParams.get("search"),page:page}))
 }
 
-  useEffect(() => {
+	useEffect(() => {
+		setPage(1)
 		dispatch(fetchProducts({param:cat,search:searchParams.get("search")}))
   },[searchParams,cat])
 	return [products,loading,setPage,getProducts];
