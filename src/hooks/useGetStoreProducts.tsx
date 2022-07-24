@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useSearchParams,useParams } from "react-router-dom";
-import storeItems from "../data/items.json";
 import { fetchProducts, productSelector } from "../store/slices/productsSlice"; 
 import { useAppDispatch,useAppSelector } from "../store/app/store";
+import { LoadingStatue } from "../utils/types";
 export interface Product {
 	id: number;
 	name: string;
@@ -12,19 +12,23 @@ export interface Product {
 }
 
 
-const useGetStoreProducts = (): Product[] => {
+const useGetStoreProducts = (): [Product[] ,LoadingStatue, React.Dispatch<React.SetStateAction<number>>,()=>void]=> {
+	const [page,setPage]=useState(1)
 	const {cat} = useParams()
 	const [searchParams, setSearchparams] = useSearchParams();
-	const searchParamsObj = Object.fromEntries(searchParams.entries());
 	const dispatch = useAppDispatch()
-	const products=useAppSelector(productSelector)
+	const {products,loading}=useAppSelector(productSelector)
 
-
+	console.log(page)
+	const getProducts = () => {
+		console.log("getting products")
+		dispatch(fetchProducts({param:cat,search:searchParams.get("search"),page:page}))
+}
 
   useEffect(() => {
 		dispatch(fetchProducts({param:cat,search:searchParams.get("search")}))
   },[searchParams,cat])
-	return products;
+	return [products,loading,setPage,getProducts];
 };
 
 export default useGetStoreProducts;

@@ -32,7 +32,7 @@ function NavBar({categories}:{categories:Categories[]}) {
 					</Nav.Link>
 					</Nav>
 					<ShoppingCartButton number={cartItems}/>
-					</Navbar.Collapse>
+					</Navbar.Collapse> 
 			</Container>
 		</Navbar>
 	);
