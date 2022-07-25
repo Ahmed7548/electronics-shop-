@@ -1,12 +1,23 @@
-import React, { useEffect } from "react";
-import { Container, Nav, Navbar, NavDropdown  } from "react-bootstrap";
+import React, { MouseEventHandler, useEffect,useState } from "react";
+import { Container, Nav, Navbar, NavDropdown, Form,Button } from "react-bootstrap";
 import ShoppingCartButton from "./ShoppingCartButton";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import { selectCartProducts } from "../store/slices/cartSlice";
-import { RootState, useAppDispatch, useAppSelector } from "../store/app/store";
+import store, { RootState, useAppDispatch, useAppSelector } from "../store/app/store";
 import { Categories } from "../store/slices/appStartSlice";
 
-function NavBar({categories}:{categories:Categories[]}) {
+function NavBar({ categories }: { categories: Categories[] }) {
+	const [search,setSearch]=useState("")
+	const navigate = useNavigate()
+	
+	const searchHandler = (e:React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault()
+		console.log("here")
+		console.log(window.location.pathname.split("/"))
+		if (window.location.pathname.split("/")[1] === "store") { navigate(`?search=${search}`) } else {
+			navigate(`store?search=${search}`)
+		}
+	}
 	
 	const cartItems = useAppSelector(selectCartProducts).length
 	return (
@@ -31,6 +42,17 @@ function NavBar({categories}:{categories:Categories[]}) {
 						About
 					</Nav.Link>
 					</Nav>
+					<Form className="d-flex" >
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+							aria-label="Search"
+							value={search}
+							onChange={(e)=>{setSearch(e.target.value)}}
+            />
+            <Button variant="outline-success" onClick={searchHandler} className="me-3">Search</Button>
+          </Form>
 					<ShoppingCartButton number={cartItems}/>
 					</Navbar.Collapse> 
 			</Container>

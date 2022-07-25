@@ -36,10 +36,16 @@ const appStartSlice = createSlice({
     
   },
   extraReducers(builder){
-    builder.addCase(fetchAppStartData.fulfilled, (state, { payload:categories }) => {
+    builder.addCase(fetchAppStartData.fulfilled, (state, { payload: categories }) => {
       state.categories = categories
-      state.loading= "succeeded"
-  })
+      state.loading = "succeeded"
+    });
+    builder.addCase(fetchAppStartData.rejected, (state, action) => {
+      state.loading = "failed"
+    });
+    builder.addCase(fetchAppStartData.pending, (state, action) => {
+      state.loading="pending"
+    })
   }
 })
 

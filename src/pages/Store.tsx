@@ -8,6 +8,8 @@ function Store() {
 
 	const [products, loading, setPage, getProducts] = useGetStoreProducts();
 
+
+	console.log(products)
 // handle the scroll of the document
 	const scrollHandler = (e: Event): void => {
 		const htmlElement = document.querySelector("html") as HTMLElement;
@@ -49,7 +51,7 @@ function Store() {
 					);
 				})}
 			</Row>
-			{loading === "idle" && <p>loading....</p>}
+			{loading === "idle"||loading ==="pending" && <p className="ms-auto mt-5 w-100">loading....</p>}
 			{loading === "noMore" && (
 				<p className="my-5 text-center">no more products</p>
 			)}

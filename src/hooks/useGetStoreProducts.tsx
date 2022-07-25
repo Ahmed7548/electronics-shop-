@@ -25,12 +25,14 @@ const useGetStoreProducts = (): [Product[] ,LoadingStatue, React.Dispatch<React.
 
 	const getProducts = () => {
 		dispatch(fetchProducts({param:cat,search:searchParams.get("search"),page:page}))
-}
+	}
+
 
 	useEffect(() => {
+		console.log(searchParams.get("search"),"inside")
 		setPage(1)
 		dispatch(fetchProducts({param:cat,search:searchParams.get("search")}))
-  },[searchParams,cat])
+  },[searchParams.get("search"),cat])
 	return [products,loading,setPage,getProducts];
 };
 

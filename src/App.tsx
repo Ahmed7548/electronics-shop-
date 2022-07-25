@@ -9,13 +9,30 @@ import NavBar from "./components/NavBar";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./store/app/store";
 import { selectAppStartData,fetchAppStartData } from "./store/slices/appStartSlice";
+import Error from "./components/Error";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData)
 	const dispatch=useAppDispatch()
 	useEffect(() => {
 		dispatch(fetchAppStartData())
-	},[])
+	}, [])
+	
+	if (appStartData.loading === "failed") {
+		return (
+			<>
+			<NavBar categories={appStartData.categories} />
+			<Error title="404"> couldn't load resources</Error>
+			</>)
+	}
+
+	if (appStartData.loading === "pending") {
+		console.log("here")
+		return (<>
+			<NavBar categories={appStartData.categories} />
+			<p className="mt-5">loading</p>
+		</>)
+	}
 	return (
 		<>
 			<NavBar categories={appStartData.categories} />
