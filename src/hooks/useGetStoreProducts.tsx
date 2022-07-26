@@ -9,6 +9,7 @@ export interface Product {
 	price: number;
 	imgUrl: string;
 	discribtion: string;
+	tags?:"string"
 }
 
 

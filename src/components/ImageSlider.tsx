@@ -76,7 +76,7 @@ const ImageSlider = ({ height, images }: PropType) => {
 
 	images.forEach((image, ind) => {
 		imagesJsx.push(
-			<img id={`${ind}`} src={image} className="slider-image" key={ind} />
+			<img id={`${ind}`} src={image} className="slider-img" key={ind} />
 		);
 		sliderButtonsJsx.push(
 			<button

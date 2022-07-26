@@ -5,9 +5,28 @@
   --slider-width:95vw
 }
 
+
 button{
   border:none;
   outline: none;
+}
+
+input.num-input{
+  text-align: center;
+  padding: 0;
+  height: 2rem;
+  width: 2rem;
+}
+
+
+.small-button {
+  transform: rotate(90deg);
+  width:1.5rem;
+  height: 2rem;
+}
+
+.row .small-button{
+  transform: rotate(0deg);
 }
 
 .prod-img{
@@ -27,9 +46,6 @@ button{
 }
 
 
-.small-button {
-  transform: rotate(90deg);
-}
 
 
 .slider{
@@ -72,7 +88,7 @@ button{
   
 }
 
-.slider img{
+.slider-img{
   width: var(--slider-width);
   height: 100%;
   object-fit: fill;
@@ -87,11 +103,14 @@ button{
     --cart-container-width:clamp(calc(500px + 10%),85vw,calc(576px + 10%))
   }
   .slider {
-    --slider-width:clamp(200px,50vw,300px)
+    --slider-width:clamp(30rem,30vw,60rem);
+    flex-shrink: 0;
+    flex-basis: var(--slider-width);
   }
 
-  .slider img{
-  /* width: clamp(200px,50vw,300px); */
+
+  .slider-img{
+    --slider-width:clamp(30rem,30vw,60rem)
   }
 
 }

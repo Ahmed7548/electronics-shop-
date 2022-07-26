@@ -10,10 +10,13 @@ const cartSlice = createSlice<CartState, SliceCaseReducers<CartState>>({
 	reducers: {
 		addTocart(
 			state,
-			{ payload: { id, qty } }: PayloadAction<{ id: number; qty: number }>
+			{ payload: { id, qty,qtySet } }: PayloadAction<{ id: number; qty: number;qtySet?:number }>
 		): void {
 			const prodInCart = state.find((prod) => prod.id === id);
 			if (prodInCart) {
+				if (qtySet) {
+					prodInCart.qty=qtySet
+				}
 				prodInCart.qty += qty;
 				return;
 			}

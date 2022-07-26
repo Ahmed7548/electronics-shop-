@@ -6,7 +6,8 @@
 			"price": 10.4,
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "mobile"
+			"cat": "mobile",
+			"tags":"mobile"
 		},
 		{
 			"id": 2,
@@ -15,6 +16,8 @@
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
 			"cat": "mobile"
+			,
+			"tags":"mobile"
 		},
 		{
 			"id": 3,
@@ -23,6 +26,8 @@
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
 			"cat": "tv"
+			,
+			"tags":"mobile"
 		},
 		{
 			"id": 4,
@@ -30,7 +35,8 @@
 			"price": 10.4,
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"tags":"reading"
 		},
 		{
 			"id": 5,
@@ -38,7 +44,8 @@
 			"price": 10.4,
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"tags":"reading"
 		},
 		{
 			"id": 6,
@@ -46,7 +53,8 @@
 			"price": 10.4,
 			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"tags":"reading"
 		},
 		{
 			"id": 7,
@@ -186,8 +194,8 @@
 		{
 			"id": 24,
 			"name": "book",
-			"price": 10.4,"https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"
-			"imgUrl": ,
+			"price": 10.4,
+			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
 			"cat": "labtop"
 		},

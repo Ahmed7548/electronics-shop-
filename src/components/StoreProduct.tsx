@@ -29,7 +29,6 @@ function StoreProduct({ item,cardHeight,cardWidth }:PropType) {
 		e: React.MouseEvent<HTMLElement, MouseEvent>
 	): void => {
 		if (e.target !== buttonRef.current) {
-			console.log("pass");
 			navigate(`/store/product?id=${item.id}`);
 		}
 		// add to cart code
