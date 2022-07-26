@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./store/app/store";
 import { selectAppStartData,fetchAppStartData } from "./store/slices/appStartSlice";
 import Error from "./components/Error";
+import Product from "./pages/Product";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData)
@@ -42,6 +43,7 @@ function App() {
 					<Route path="/store" element={<Store />} >
 						<Route path=":cat" element={<Store/>} />
 					</Route>
+					<Route path="store/product" element={<Product/>}/>
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
 				</Routes>

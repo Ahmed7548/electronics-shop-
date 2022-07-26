@@ -186,8 +186,8 @@
 		{
 			"id": 24,
 			"name": "book",
-			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"price": 10.4,"https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"
+			"imgUrl": ,
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
 			"cat": "labtop"
 		},

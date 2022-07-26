@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import Error from "../components/Error";
-import StoreProduct from "../components/StoreProduct";
+import { useEffect } from "react";
+
+import ProductsArrangement from "../components/ProductsArrangement";
 import useGetStoreProducts from "../hooks/useGetStoreProducts";
 
 function Store() {
-
 	const [products, loading, setPage, getProducts] = useGetStoreProducts();
 
-
-	console.log(products)
-// handle the scroll of the document
+	console.log(products);
+	// handle the scroll of the document
 	const scrollHandler = (e: Event): void => {
 		const htmlElement = document.querySelector("html") as HTMLElement;
 		const scrollDistance = htmlElement.scrollHeight - htmlElement.clientHeight;
@@ -27,7 +24,6 @@ function Store() {
 		}
 	};
 
-
 	useEffect(() => {
 		// prevent adding a listener when there is no more products
 		if (loading === "noMore") {
@@ -42,25 +38,7 @@ function Store() {
 
 	return (
 		<>
-			<Row lg={3} md={2} sm={1} xs={1} className="g-5">
-				{products.map((item): JSX.Element => {
-					return (
-						<Col key={item.id}>
-							<StoreProduct item={item} />
-						</Col>
-					);
-				})}
-			</Row>
-			{loading === "idle"||loading ==="pending" && <p className="ms-auto mt-5 w-100">loading....</p>}
-			{loading === "noMore" && (
-				<p className="my-5 text-center">no more products</p>
-			)}
-			{loading === "failed" && (
-				<Error title="404 not found">
-					couldn't find the resources you are looking for please check your
-					internet connection or try latter
-				</Error>
-			)}
+			<ProductsArrangement products={products} loading={loading} cardHeight="25rem"/>
 		</>
 	);
 }
