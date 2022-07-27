@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ImageSlider from "../components/ImageSlider";
 import ProductsArrangement from "../components/ProductsArrangement";
 import { Button } from "react-bootstrap";
 import QuantityController from "../components/QuantityController";
+import api from "../API/api"
+import { Product as ProductType } from "../utils/types";
+
+import { useSearchParams } from "react-router-dom";
+
+
+
 
 function Product() {
+	const [searchParams]=useSearchParams()
 	const [qty, setQty] = useState(1);
+	const [page, setPage] = useState(1)
+	const [product, setProduct] = useState<ProductType>()
+	const [relatedProducts,setRelatedProducts]=useState<ProductType[]>()
 
 	const IncrementHandler = () => {
 		setQty((prevState) => prevState + 1);
@@ -20,6 +31,24 @@ function Product() {
 		if (value < 1) return;
 		setQty(value);
 	};
+
+
+
+
+
+	useEffect(() => {
+		
+		(async () => {
+			let tags:string|undefined
+			if (page === 1) {
+				const { data: product }: { data: ProductType } = await api.get(`products/${searchParams.get("id")}`)
+				tags=product.tags
+				setProduct(product)
+			}
+			const { data: relatedProducts }: { data: ProductType[] } = await api.get(`products?tags=${tags||product?.tags}&_page=${page}`)
+			setRelatedProducts(relatedProducts)
+		})()
+	},[page])
 
 	return (
 		<>
