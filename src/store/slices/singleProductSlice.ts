@@ -9,12 +9,12 @@ import store, { RootState } from "../app/store";
 
 interface ProductState {
 	product: {
-		data: Product | null;
+		product: Product;
 		loading: "idle" | "pending" | "succeeded" | "failed";
 		error: SerializedError | null;
 	};
 	relatedProducts: {
-		entries: Product[];
+		products: Product[];
 		loading: "idle" | "pending" | "succeeded" | "failed" | "noMore";
 		error: SerializedError | null;
 	};
@@ -22,12 +22,12 @@ interface ProductState {
 
 const initialState: ProductState = {
 	product: {
-		data: null,
+		product: {} as Product,
 		loading: "idle",
 		error: null,
 	},
 	relatedProducts: {
-		entries: [],
+		products: [],
 		loading: "idle",
 		error: null,
 	},
@@ -54,6 +54,7 @@ export const fetchRelatedProducts = createAsyncThunk(
 
 		// by tags...
 		const { data } = await api.get(getUrl);
+		console.log(data)
 
 		return { data: data as Product[], page: page || 1 };
 	}
@@ -65,7 +66,7 @@ const productSlice = createSlice({
 	reducers: {},
 	extraReducers(builder) {
 		builder.addCase(fetchProduct.fulfilled, (state, { payload: product }) => {
-			state.product.data = product;
+			state.product.product = product;
 			state.product.loading = "succeeded";
 		});
 		builder.addCase(fetchProduct.pending, (state) => {
@@ -78,12 +79,16 @@ const productSlice = createSlice({
 		builder.addCase(
 			fetchRelatedProducts.fulfilled,
 			(state, { payload: { data, page } }) => {
+				if (data.length === 0) {
+					state.relatedProducts.loading = "noMore"
+					return
+				}
 				state.product.loading = "succeeded";
 				if (page > 1) {
-					state.relatedProducts.entries.push(...data);
+					state.relatedProducts.products.push(...data);
 					return;
 				}
-				state.relatedProducts.entries = data;
+				state.relatedProducts.products = data;
 			}
 		);
 		builder.addCase(fetchRelatedProducts.pending, (state) => {
@@ -96,7 +101,10 @@ const productSlice = createSlice({
 	},
 });
 
-export const selectProduct = (state: RootState) => state.viewedProduct;
+export const selectProduct = (state: RootState) => state.viewedProduct.product;
+
+export const selectRealtedProducts = (state: RootState) =>
+	state.viewedProduct.relatedProducts;
 
 export const {} = productSlice.actions;
 

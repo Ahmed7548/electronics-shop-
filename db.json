@@ -4,304 +4,592 @@
 			"id": 1,
 			"name": "mobile",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg","https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg","https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
 			"cat": "mobile",
-			"tags":"mobile"
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 2,
 			"name": "mobile",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "mobile"
-			,
-			"tags":"mobile"
+			"cat": "mobile",
+			"tags": "mobile",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 3,
 			"name": "labtop",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "tv"
-			,
-			"tags":"mobile"
+			"cat": "tv",
+			"tags": "mobile",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 4,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
 			"cat": "labtop",
-			"tags":"reading"
+			"tags": "reading",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 5,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
 			"cat": "labtop",
-			"tags":"reading"
+			"tags": "reading",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 6,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
 			"cat": "labtop",
-			"tags":"reading"
+			"tags": "reading",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 7,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 8,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 9,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 10,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 11,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 12,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 13,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 14,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 15,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 16,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"good"
 		},
 		{
 			"id": 17,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
+
 		},
 		{
 			"id": 18,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
-		},{
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
+
+		},
+		{
 			"id": 19,
 			"name": "mobile",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "mobile"
+			"cat": "mobile",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
+
 		},
 		{
 			"id": 20,
 			"name": "tv",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "mobile"
+			"cat": "mobile",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
+
 		},
 		{
 			"id": 21,
 			"name": "labtop",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui adipisicing consectetur officia labore cupidatat. Cillum Lorem excepteur duis aute. Occaecat eiusmod aliquip et ex occaecat aliquip elit ad cupidatat.",
-			"cat": "tv"
+			"cat": "tv",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
 		},
 		{
 			"id": 22,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
 		},
 		{
 			"id": 23,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 24,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
 		},
 		{
 			"id": 25,
 			"name": "tv",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 26,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"cheap"
+
 		},
 		{
 			"id": 27,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 28,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 29,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 30,
 			"name": "tv",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 31,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			]
 		},
 		{
 			"id": 32,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 33,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 34,
 			"name": "tv",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 35,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 36,
 			"name": "book",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		},
 		{
 			"id": 37,
 			"name": "tv",
 			"price": 10.4,
-			"imgUrl": "https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg",
+			"imgUrl": ["https://images.olx.com.eg/thumbnails/30529374-240x180.jpeg"],
 			"discribtion": "Proident nostrud cillum pariatur ipsum. Eiusmod incididunt enim sint adipisicing esse qui qui",
-			"cat": "labtop"
+			"cat": "labtop",
+			"specification": [
+				"asmd  sdasdsadsad",
+				"ismdaknd sdasdsa asdsa reefef eadfaef  dafef asdef ea fead",
+				"ijdamfld ahfjdhsajdasjk badssd ad asd afa fasfd fa",
+				"lplmdfsmdfa dasdsadfgh jsdkj j fdkjfdjfa ",
+				"sdfsadfd lkndmfkd adlfnaskdnasm mlfkmdklfamsd adfkmdfkasfm lmdflkmaf lmfkldmsa"
+			],
+			"tags":"expensive"
 		}
 	],
 	"categories": [

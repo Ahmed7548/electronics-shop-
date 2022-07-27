@@ -5,9 +5,10 @@ import image from "../utils/image.jpg";
 interface PropType {
 	height: string;
 	images: string[];
+	style?:React.CSSProperties
 }
 
-const ImageSlider = ({ height, images }: PropType) => {
+const ImageSlider = ({ height, images,style }: PropType) => {
 	const [activeImage, setActiveImage] = useState(0);
 
 	const [tocuhSlide, setTouchSlide] = useState(0);
@@ -89,7 +90,7 @@ const ImageSlider = ({ height, images }: PropType) => {
 
 	return (
 		<div
-			style={{ height: height, overflow: "hidden" }}
+			style={{overflow: "hidden",...style }}
 			className="slider position-relative bg-white border border border-opacity-25 rounded"
 		>
 			<div

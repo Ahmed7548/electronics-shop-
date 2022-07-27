@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import cartReducer, { CartState } from "../slices/cartSlice";
 import productsReducer from "../slices/productsSlice";
 import appStartReducer from "../slices/appStartSlice"
-import productReducer from "../slices/productSlice"
+import productReducer from "../slices/singleProductSlice"
 
 const  store = configureStore({
   reducer: {

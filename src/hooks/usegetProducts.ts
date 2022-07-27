@@ -1,17 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams, useParams } from "react-router-dom";
-import { fetchProducts, productSelector } from "../store/slices/productsSlice";
-import { RootState, useAppDispatch, useAppSelector } from "../store/app/store";
+import { useSearchParams } from "react-router-dom";
+import { RootState, useAppSelector } from "../store/app/store";
 import { LoadingStatue } from "../utils/types";
-
-export interface Product {
-	id: number;
-	name: string;
-	price: number;
-	imgUrl: string;
-	discribtion: string;
-	tags?: "string";
-}
+import { Product } from "../utils/types";
 
 interface SelectorReturn {
 	products: Product[];
@@ -19,8 +10,8 @@ interface SelectorReturn {
 }
 
 export type FetchProductCallBack = (
-	param: string | null | undefined,
-	search: string | null | undefined,
+	param?: string | null,
+	search?: string | null,
 	page?: number
 ) => Promise<void>;
 
@@ -36,6 +27,8 @@ const useGetProducts = (
 
 	const { products, loading } = useAppSelector(productsSelector);
 
+	console.log(products)
+
 	const scrollHandler = (e: Event): void => {
 		const htmlElement = document.querySelector("html") as HTMLElement;
 		const scrollDistance = htmlElement.scrollHeight - htmlElement.clientHeight;
@@ -44,15 +37,15 @@ const useGetProducts = (
 			htmlElement.clientHeight / 2
 		) {
 			//removes the listener untill the products  has been fetched
-				document.removeEventListener("scroll", scrollHandler);
-				// get the products
-				infiniteScrollCb(
-					param,
-					searchParams.get(searchParamKey || ""),
-					page.current+1
-        ).then((_) => {
-			    page.current += 1;
-				});
+			document.removeEventListener("scroll", scrollHandler);
+			// get the products
+			infiniteScrollCb(
+				param,
+				searchParams.get(searchParamKey || ""),
+				page.current + 1
+			).then((_) => {
+				page.current += 1;
+			});
 		}
 	};
 

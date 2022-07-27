@@ -8,42 +8,48 @@ import Cart from "./pages/Cart";
 import NavBar from "./components/NavBar";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./store/app/store";
-import { selectAppStartData,fetchAppStartData } from "./store/slices/appStartSlice";
+import {
+	selectAppStartData,
+	fetchAppStartData,
+} from "./store/slices/appStartSlice";
 import Error from "./components/Error";
 import Product from "./pages/Product";
 
 function App() {
-	const appStartData = useAppSelector(selectAppStartData)
-	const dispatch=useAppDispatch()
+	const appStartData = useAppSelector(selectAppStartData);
+	const dispatch = useAppDispatch();
 	useEffect(() => {
-		dispatch(fetchAppStartData())
-	}, [])
-	
+		dispatch(fetchAppStartData());
+	}, []);
+
 	if (appStartData.loading === "failed") {
 		return (
 			<>
-			<NavBar categories={appStartData.categories} />
-			<Error title="404"> couldn't load resources</Error>
-			</>)
+				<NavBar categories={appStartData.categories} />
+				<Error title="404"> couldn't load resources</Error>
+			</>
+		);
 	}
 
 	if (appStartData.loading === "pending") {
-		console.log("here")
-		return (<>
-			<NavBar categories={appStartData.categories} />
-			<p className="mt-5">loading</p>
-		</>)
+		console.log("here");
+		return (
+			<>
+				<NavBar categories={appStartData.categories} />
+				<p className="mt-5">loading</p>
+			</>
+		);
 	}
 	return (
 		<>
 			<NavBar categories={appStartData.categories} />
-			<Container fluid="sm" className="mb-4">
+			<Container fluid="lg" className="mb-4">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/store" element={<Store />} >
-						<Route path=":cat" element={<Store/>} />
+					<Route path="/store" element={<Store />}>
+						<Route path=":cat" element={<Store />} />
 					</Route>
-					<Route path="store/product" element={<Product/>}/>
+					<Route path="store/product" element={<Product />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
 				</Routes>

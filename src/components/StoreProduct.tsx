@@ -1,21 +1,14 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { Card, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { currencyFormater } from "../utils/formatCurrency";
 import { useDispatch } from "react-redux";
 import { addTocart } from "../store/slices/cartSlice";
-
-interface ProductData {
-	id: number;
-	name: string;
-	price: number;
-	imgUrl: string;
-	discribtion: string;
-}
+import {Product} from "../utils/types"
 
 
 interface PropType{
-  item: ProductData;
+  item: Product;
   cardHeight?: string;
   cardWidth?: string;
 }
@@ -43,10 +36,11 @@ function StoreProduct({ item,cardHeight,cardWidth }:PropType) {
 		>
 			<Card.Img
 				variant="top"
-				src={item.imgUrl}
 				height="30%"
 				style={{ objectFit: "contain" }}
-			/>
+				src={item.imgUrl[0]}
+			>
+			</Card.Img>
       <Card.Body className="d-flex flex-column justify-content-around">
         <div>
 				<Card.Title>{item.name}</Card.Title>

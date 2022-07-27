@@ -2,10 +2,10 @@ import { Col, Row } from "react-bootstrap";
 import Error from "../components/Error";
 import StoreProduct from "../components/StoreProduct";
 import { LoadingStatue } from "../utils/types";
-import { Product as ProductType } from "../utils/types";
+import { Product } from "../utils/types";
 
 interface PropType {
-	products: ProductType[];
+	products: Product[];
 	loading: LoadingStatue;
 	cardwidth?: string;
 	cardHeight?: string;
