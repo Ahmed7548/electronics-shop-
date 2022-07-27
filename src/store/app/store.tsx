@@ -1,14 +1,16 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer, { CartState } from "../slices/cartSlice";
-import productsReducer, { ProductState } from "../slices/productsSlice";
+import productsReducer from "../slices/productsSlice";
 import appStartReducer from "../slices/appStartSlice"
+import productReducer from "../slices/productSlice"
 
 const  store = configureStore({
   reducer: {
     cart: cartReducer,
     products: productsReducer,
-    appStartData:appStartReducer
+    appStartData: appStartReducer,
+    viewedProduct:productReducer
 }
 })
 // Infer the `RootState` and `AppDispatch` types from the store itself

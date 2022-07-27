@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { Product } from "../../hooks/useGetStoreProducts";
+import { Product } from "../../utils/types";
 import api from "../../API/api";
 import { RootState } from "../app/store";
 
-export interface ProductState {
+export interface ProductsState {
 	products: Product[];
 	loading: "idle" | "pending" | "succeeded" | "failed" | "noMore";
 }
@@ -30,7 +30,7 @@ export const fetchProducts = createAsyncThunk(
 	}
 );
 
-const initialState: ProductState = {
+const initialState: ProductsState = {
 	products: [],
 	loading: "idle",
 };
@@ -45,6 +45,7 @@ const productsSlice = createSlice({
 			(state, { payload: [products, page] }) => {
 				if (products.length === 0) {
 					state.loading = "noMore";
+					console.log("nooo more")
 					return;
 				}
 				state.loading = "succeeded";
