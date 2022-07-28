@@ -1,24 +1,27 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import allProducts from "../data/items.json";
 import { currencyFormater } from "../utils/formatCurrency";
-import { addTocart, decreaseAmountInCart } from "../store/slices/cartSlice";
+import {
+	decreaseAmountInCart,
+	increaseAmountInCart,
+	setQtyInCart,
+} from "../store/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 import QuantityController from "./QuantityController";
+import { Product } from "../utils/types";
 
-function CartProduct({ product }: { product: { id: number; qty: number } }) {
-	const productData = allProducts.find((prod) => prod.id === product.id);
+function CartProduct({ product, qty }: { product: Product; qty: number }) {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const incrementQty = () => {
-		dispatch(addTocart({ id: product.id, qty: 1 }));
+		dispatch(increaseAmountInCart(product.id));
 	};
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		let value = parseInt(e.target.value);
 		if (value < 1) return;
-		dispatch(addTocart({ id: product.id, setQty: value }));
+		dispatch(setQtyInCart({ id: product.id, setQty: value }));
 	};
 
 	const decrementQty = () => {
@@ -28,10 +31,9 @@ function CartProduct({ product }: { product: { id: number; qty: number } }) {
 	const onImageClick = () => {
 		// navigate(`/poduct/${product.id}`);
 		navigate(`/store/product?id=${product.id}`);
-
 	};
 
-	if (!productData) {
+	if (!product) {
 		return <p>product was not found</p>;
 	}
 	return (
@@ -39,30 +41,28 @@ function CartProduct({ product }: { product: { id: number; qty: number } }) {
 			<img
 				onClick={onImageClick}
 				className="prod-img cart-imge"
-				src={productData?.imgUrl}
+				src={product?.imgUrl[0]}
 				style={{ objectFit: "contain" }}
 			/>
 			<div className="ms-3 d-flex justify-content-center align-items-ccenter flex-column ">
 				<h3 className="fs-3">
-					{productData.name.length > 15
-						? productData?.name.substring(0, 15)
-						: productData.name}
+					{product.name.length > 15
+						? product?.name.substring(0, 15)
+						: product.name}
 				</h3>
-				<small className="text-muted">
-					{currencyFormater(productData.price)}
-				</small>
+				<small className="text-muted">{currencyFormater(product.price)}</small>
 			</div>
 			<div className="d-flex flex justify-content-center align-items-center p-2">
 				<QuantityController
 					increment={incrementQty}
 					decrement={decrementQty}
-					qty={product.qty}
+					qty={qty}
 					OnChangeQty={changeHandler}
 				/>
 				<div className="ms-1">
 					total price:{" "}
 					<span className="text-muted fs-6">
-						{currencyFormater(product.qty * productData.price)}
+						{currencyFormater(qty * product.price)}
 					</span>
 				</div>
 			</div>

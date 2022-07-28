@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ImageSlider from "../components/ImageSlider";
 import QuantityController from "../components/QuantityController";
 import { Button,Container } from 'react-bootstrap';
 import { Product } from '../utils/types';
+import { useAppDispatch } from '../store/app/store';
+import { addTocart } from '../store/slices/cartSlice';
 
 const ProductData = ({product}:{product:Product}) => {
-
+  const dispatch= useAppDispatch()
 	const [qty, setQty] = useState(1);
 
   const IncrementHandler = () => {
@@ -20,7 +22,13 @@ const ProductData = ({product}:{product:Product}) => {
 		const value = parseInt(e.target.value);
 		if (value < 1) return;
 		setQty(value);
-	};
+  };
+  
+  const addToCartHandler = (e:React.FormEvent) => {
+    e.preventDefault()
+    dispatch(addTocart({ product, qty }))
+    setQty(1)
+  }
   
   return (
     <><Container fluid className="d-flex flex-column flex-md-row justify-content-evenly align-items-center mb-5 bg-white p-3">
@@ -29,29 +37,17 @@ const ProductData = ({product}:{product:Product}) => {
       height="60vh"
     />
     <div className="slider p-3 mx-sm-3 bg-white">
-      <h3>product name</h3>
+        <h3>{product.name}</h3>
       <small className="text-muted fs-5">$100.99</small>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem,
-        porro. Officia quia velit architecto sint iusto tempore nulla ipsa!
-        Deleniti, vitae magni nemo tempora expedita minima esse maxime
-        fugiat quis!
+        {product.discribtion}
       </p>
         <h5>product specification</h5>
-      <ul>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>
-        <li>adasdosm</li>	
+        <ul>
+          {product.specification.map((line, ind) => (<li key={ind}>{ line}</li>))}
       </ul>
-      <form className="d-flex justify-content-between">
-        <Button variant="outline-dark">Add To Cart</Button>
+      <form className="d-flex justify-content-between" onSubmit={addToCartHandler}>
+        <Button type='submit' variant="outline-dark">Add To Cart</Button>
         <QuantityController
           OnChangeQty={ChangeQtyHandler}
           decrement={DecrementHandler}

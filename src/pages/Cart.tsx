@@ -19,7 +19,7 @@ function Cart() {
 			<div className=" m-auto p-3 bg-white cart-container">
 				{products.length ? (
 					products.map((product) => (
-						<CartProduct product={product} key={product.id} />
+						<CartProduct product={product.product} qty={product.qty} key={product.product.id} />
 					))
 				) : (
 					<EmptyCart />

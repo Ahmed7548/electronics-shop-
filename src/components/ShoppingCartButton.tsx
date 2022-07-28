@@ -12,8 +12,7 @@ function ShoppingCartButton({ number }: { number: number }) {
 					<Button
 					onClick={navigateToCartHandle}
 					variant="dark"
-					className="rounded-circle"
-				style={{ position: "relative"}}
+					className="rounded-circle position-relative my-3 my-md-0"
 				>
 			<svg
 				version="1.1"
