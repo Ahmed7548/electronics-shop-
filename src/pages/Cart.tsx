@@ -1,7 +1,7 @@
 import { Button} from "react-bootstrap";
-import CartProduct from "../components/CartProduct";
+import CartProduct from "../components/cart/CartProduct";
 import { selectCartProducts } from "../store/slices/cartSlice";
-import EmptyCart from "../components/EmptyCart";
+import EmptyCart from "../components/cart/EmptyCart";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/app/store";
 

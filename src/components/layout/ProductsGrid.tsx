@@ -1,8 +1,8 @@
 import { Col, Row } from "react-bootstrap";
-import Error from "../components/Error";
-import StoreProduct from "../components/StoreProduct";
-import { LoadingStatue } from "../utils/types";
-import { Product } from "../utils/types";
+import Error from "../Error";
+import StoreProduct from "../product/StoreProduct";
+import { LoadingStatue } from "../../utils/types";
+import { Product } from "../../utils/types";
 
 interface PropType {
 	products: Product[];
@@ -14,7 +14,7 @@ interface PropType {
 function ProductsArrangement({ products, loading,cardHeight,cardwidth }: PropType) {
 	return (
 		<>
-			<Row lg={3} md={2} sm={1} xs={1} className="g-sm-5">
+			<Row lg={4} md={3} sm={2} xs={2} className="g-sm-5">
 				{products.map((item): JSX.Element => {
 					return (
 						<Col key={item.id}>

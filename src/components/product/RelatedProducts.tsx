@@ -1,10 +1,10 @@
-import useGetProducts from "../hooks/usegetProducts";
-import { useAppDispatch } from "../store/app/store";
+import useGetProducts from "../../hooks/usegetProducts";
+import { useAppDispatch } from "../../store/app/store";
 import {
 	fetchRelatedProducts,
 	selectRealtedProducts,
-} from "../store/slices/singleProductSlice";
-import ProductsArrangement from "./ProductsArrangement";
+} from "../../store/slices/singleProductSlice";
+import ProductsArrangement from "../layout/ProductsGrid";
 
 const RelatedProducts = ({ tags }: { tags: string }) => {
 	const dispatch = useAppDispatch();

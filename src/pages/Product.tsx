@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ImageSlider from "../components/ImageSlider";
+import ImageSlider from "../components/UI/ImageSlider";
 import { Button, Container } from "react-bootstrap";
-import QuantityController from "../components/QuantityController";
+import QuantityController from "../components/UI/QuantityController";
 import { useSearchParams } from "react-router-dom";
 import {
 	fetchProduct,
@@ -10,8 +10,8 @@ import {
 	selectRealtedProducts,
 } from "../store/slices/singleProductSlice";
 import { useAppDispatch, useAppSelector } from "../store/app/store";
-import RelatedProducts from "../components/RelatedProducts";
-import ProductData from "../components/ProductData";
+import RelatedProducts from "../components/product/RelatedProducts";
+import ProductData from "../components/product/ProductData";
 import Error from "../components/Error";
 
 function Product() {

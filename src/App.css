@@ -10,6 +10,12 @@ footer{
   min-height: 45vh;
 }
 
+
+button{
+  border:none;
+  outline: none;
+}
+
 /* my utility classes */
 .uppercase{
   text-transform: uppercase;
@@ -40,17 +46,36 @@ footer{
   grid-row: span 2;
 }
 
-.bc-img-fit{
+.bc-img{
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.bc-img-fit{
+  background-size: cover ;
 }
 
 
-button{
-  border:none;
-  outline: none;
+.bc-img-contain{
+  background-size: contain ;
 }
+
+.layer::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+}
+
+.layer:hover::before {
+	opacity: 0.2;
+}
+
 
 input.num-input{
   text-align: center;
@@ -59,12 +84,13 @@ input.num-input{
   width: 2rem;
 }
 
-
+/* components */
 .small-button {
   transform: rotate(90deg);
   width:1.5rem;
   height: 2rem;
 }
+
 
 .row .small-button{
   transform: rotate(0deg);

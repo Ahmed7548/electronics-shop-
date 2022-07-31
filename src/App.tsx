@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Store from "./pages/Store";
 import Cart from "./pages/Cart";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/header/NavBar";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./store/app/store";
 import {
@@ -16,7 +16,7 @@ import Error from "./components/Error";
 import Product from "./pages/Product";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData);

@@ -1,5 +1,5 @@
 import React from 'react'
-import CartSvg from './CartSvg'
+import CartSvg from '../UI/CartSvg'
 
 function EmptyCart() {
   return (

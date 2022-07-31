@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { currencyFormater } from "../utils/formatCurrency";
+import { currencyFormater } from "../../utils/formatCurrency";
 import {
 	decreaseAmountInCart,
 	increaseAmountInCart,
 	setQtyInCart,
-} from "../store/slices/cartSlice";
+} from "../../store/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
-import QuantityController from "./QuantityController";
-import { Product } from "../utils/types";
+import QuantityController from "../UI/QuantityController";
+import { Product } from "../../utils/types";
 
 function CartProduct({ product, qty }: { product: Product; qty: number }) {
 	const dispatch = useDispatch();

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import ImageSlider from "../components/ImageSlider";
-import QuantityController from "../components/QuantityController";
+import ImageSlider from "../UI/ImageSlider";
+import QuantityController from "../UI/QuantityController";
 import { Button,Container } from 'react-bootstrap';
-import { Product } from '../utils/types';
-import { useAppDispatch } from '../store/app/store';
-import { addTocart } from '../store/slices/cartSlice';
+import { Product } from '../../utils/types';
+import { useAppDispatch } from '../../store/app/store';
+import { addTocart } from '../../store/slices/cartSlice';
 import { toast } from 'react-toastify';
 
 const ProductData = ({product}:{product:Product}) => {

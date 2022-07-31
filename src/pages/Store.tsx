@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import ProductsArrangement from "../components/ProductsArrangement";
+import ProductsArrangement from "../components/layout/ProductsGrid";
 import useGetProducts from "../hooks/usegetProducts";
 import { useAppDispatch } from "../store/app/store";
 import { fetchProducts, productSelector } from "../store/slices/productsSlice";
@@ -16,10 +16,6 @@ function Store() {
 		},
 		async (param, search, page) => {
 			await dispatch(fetchProducts({ param, search, page }));
-			toast.success("added to cart", {
-				autoClose: 1000,
-				position:toast.POSITION.TOP_CENTER
-			})
 		},
 		"search",
 		cat
@@ -31,7 +27,7 @@ function Store() {
 			<ProductsArrangement
 				products={products}
 				loading={loading}
-				cardHeight="25rem"
+				cardHeight="20rem"
 			/>
 		</>
 	);

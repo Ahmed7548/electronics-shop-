@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const HomeHeader = ({ imageUrl }: { imageUrl: string }) => {
 	return (
 		<section
-			className="w-100 bg-danger home-header layer bc-img-fit text-white p-5 d-flex flex-column justify-content-center "
+			className="w-100 bg-danger home-header layer bc-img bc-img-fit text-white p-5 d-flex flex-column justify-content-center "
 			style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <div>

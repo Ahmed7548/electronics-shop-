@@ -7,15 +7,15 @@ import {
 	Form,
 	Button,
 } from "react-bootstrap";
-import ShoppingCartButton from "./ShoppingCartButton";
+import ShoppingCartButton from "../UI/ShoppingCartButton";
 import { NavLink, useNavigate } from "react-router-dom";
-import { selectCartProducts } from "../store/slices/cartSlice";
+import { selectCartProducts } from "../../store/slices/cartSlice";
 import store, {
 	RootState,
 	useAppDispatch,
 	useAppSelector,
-} from "../store/app/store";
-import { Categories } from "../store/slices/appStartSlice";
+} from "../../store/app/store";
+import { Categories } from "../../store/slices/appStartSlice";
 
 function NavBar({ categories }: { categories: Categories[] }) {
 	const [search, setSearch] = useState("");
