@@ -5,6 +5,7 @@ import { currencyFormater } from "../utils/formatCurrency";
 import { useDispatch } from "react-redux";
 import { addTocart } from "../store/slices/cartSlice";
 import { Product } from "../utils/types";
+import {toast} from "react-toastify"
 
 interface PropType {
 	item: Product;
@@ -22,9 +23,13 @@ function StoreProduct({ item, cardHeight, cardWidth }: PropType) {
 	): void => {
 		if (e.target !== buttonRef.current) {
 			navigate(`/store/product?id=${item.id}`);
+			return 
 		}
 		// add to cart code
 		dispatch(addTocart({ product: item, qty: 1 }));
+		toast.success('product added to cart successfully', {
+			position: "top-center",
+			});
 	};
 
 	return (

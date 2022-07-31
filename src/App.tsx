@@ -14,6 +14,9 @@ import {
 } from "./store/slices/appStartSlice";
 import Error from "./components/Error";
 import Product from "./pages/Product";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from "./components/Footer";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData);
@@ -54,6 +57,21 @@ function App() {
 					<Route path="/cart" element={<Cart />} />
 				</Routes>
 			</Container>
+				<Footer/>
+			<ToastContainer
+				position="top-center"
+				autoClose={1000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+
+			/>
+
 		</>
 	);
 }

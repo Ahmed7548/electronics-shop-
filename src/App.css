@@ -6,6 +6,47 @@
 }
 
 
+footer{
+  min-height: 45vh;
+}
+
+/* my utility classes */
+.uppercase{
+  text-transform: uppercase;
+}
+
+.grid {
+  --gap:10px;
+  --column-num:2;
+  --row-height:150px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--column-num),1fr);
+  grid-auto-rows:var(--row-height) ;
+  gap: var(--gap);
+
+}
+
+.grid>*{
+  height: 100%;
+  width: 100%;
+}
+
+.grid-column-2{
+  grid-column: span 2;
+}
+
+.grid-row-2{
+  grid-row: span 2;
+}
+
+.bc-img-fit{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 button{
   border:none;
   outline: none;
@@ -44,9 +85,6 @@ input.num-input{
 .cart-container{
   width: var(--cart-container-width);
 }
-
-
-
 
 .slider{
   overflow: hidden;
@@ -98,6 +136,8 @@ input.num-input{
 
 
 
+
+
 @media (min-width:768px){
     .cart-element {
     --cart-ele-width:clamp(500px,80vw,576px)
@@ -114,6 +154,10 @@ input.num-input{
     --slider-width:max(30vw,400px)
   }
 
+  .grid{
+  --column-num:4;
+  --row-height:300px;
+   }
 }
 
 

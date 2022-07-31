@@ -4,6 +4,7 @@ import ProductsArrangement from "../components/ProductsArrangement";
 import useGetProducts from "../hooks/usegetProducts";
 import { useAppDispatch } from "../store/app/store";
 import { fetchProducts, productSelector } from "../store/slices/productsSlice";
+import {toast, ToastContainer} from "react-toastify"	
 
 function Store() {
 	const dispatch = useAppDispatch();
@@ -15,6 +16,10 @@ function Store() {
 		},
 		async (param, search, page) => {
 			await dispatch(fetchProducts({ param, search, page }));
+			toast.success("added to cart", {
+				autoClose: 1000,
+				position:toast.POSITION.TOP_CENTER
+			})
 		},
 		"search",
 		cat

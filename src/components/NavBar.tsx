@@ -27,11 +27,8 @@ function NavBar({ categories }: { categories: Categories[] }) {
 	const searchHandler= (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		// if not in store already navigate to store
-		if (window.location.pathname.split("/")[1] === "store") {
-			navigate(`?search=${search}`);
-		} else {
-			navigate(`store?search=${search}`);
-		}
+			navigate(`/store?search=${search}`);
+	
 	};
 
 	const cartItems = useAppSelector(selectCartProducts).length;

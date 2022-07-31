@@ -5,6 +5,7 @@ import { Button,Container } from 'react-bootstrap';
 import { Product } from '../utils/types';
 import { useAppDispatch } from '../store/app/store';
 import { addTocart } from '../store/slices/cartSlice';
+import { toast } from 'react-toastify';
 
 const ProductData = ({product}:{product:Product}) => {
   const dispatch= useAppDispatch()
@@ -27,6 +28,9 @@ const ProductData = ({product}:{product:Product}) => {
   const addToCartHandler = (e:React.FormEvent) => {
     e.preventDefault()
     dispatch(addTocart({ product, qty }))
+    toast.success('product added to cart successfully', {
+      position: "bottom-left",
+			});
     setQty(1)
   }
   
