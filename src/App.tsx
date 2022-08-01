@@ -46,7 +46,7 @@ function App() {
 	return (
 		<>
 			<NavBar categories={appStartData.categories} />
-			<Container fluid="lg" className="mb-4">
+			<Container fluid="lg" as={"main"} className="mb-4">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/store" element={<Store />}>

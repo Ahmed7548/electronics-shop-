@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { Product } from "../../utils/types";
+import { LoadingStatus, Product } from "../../utils/types";
 import api from "../../API/api";
 import { RootState } from "../app/store";
 
 export interface ProductsState {
 	products: Product[];
-	loading: "idle" | "pending" | "succeeded" | "failed" | "noMore";
+	loading: LoadingStatus;
+	message?:string
 }
 
 
@@ -44,8 +45,13 @@ const productsSlice = createSlice({
 			fetchProducts.fulfilled,
 			(state, { payload: [products, page] }) => {
 				if (products.length === 0) {
+					if (page === 1) {
+						console.log(page)
+						state.loading = "no-products"
+						state.products = []
+						return
+					}
 					state.loading = "noMore";
-					console.log("nooo more")
 					return;
 				}
 				state.loading = "succeeded";

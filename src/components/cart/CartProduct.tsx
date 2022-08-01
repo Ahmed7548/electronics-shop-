@@ -10,22 +10,33 @@ import { useNavigate } from "react-router-dom";
 import QuantityController from "../UI/QuantityController";
 import { Product } from "../../utils/types";
 
-function CartProduct({ product, qty }: { product: Product; qty: number }) {
+interface PropType {
+	product: Product;
+	qty: number;
+	setTotalPrice:React.Dispatch<React.SetStateAction<number>>
+}
+
+function CartProduct({ product, qty,setTotalPrice }:PropType) {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const incrementQty = () => {
 		dispatch(increaseAmountInCart(product.id));
+		setTotalPrice(prev=>prev+product.price)
 	};
 
 	const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		let value = parseInt(e.target.value);
 		if (value < 1) return;
 		dispatch(setQtyInCart({ id: product.id, setQty: value }));
+
+		// update the total price by substracting the prev single product total price and then adding the new single product total price
+		setTotalPrice(prev=>prev-(product.price*qty)+(product.price*value))
 	};
 
 	const decrementQty = () => {
 		dispatch(decreaseAmountInCart(product.id));
+		setTotalPrice(prev=>prev-product.price)
 	};
 
 	const onImageClick = () => {

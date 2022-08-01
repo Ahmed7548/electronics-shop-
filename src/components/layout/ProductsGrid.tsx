@@ -1,17 +1,17 @@
 import { Col, Row } from "react-bootstrap";
 import Error from "../Error";
 import StoreProduct from "../product/StoreProduct";
-import { LoadingStatue } from "../../utils/types";
+import { LoadingStatus } from "../../utils/types";
 import { Product } from "../../utils/types";
 
 interface PropType {
 	products: Product[];
-	loading: LoadingStatue;
+	loading: LoadingStatus;
 	cardwidth?: string;
 	cardHeight?: string;
 }
-
 function ProductsArrangement({ products, loading,cardHeight,cardwidth }: PropType) {
+	console.log(loading)
 	return (
 		<>
 			<Row lg={4} md={3} sm={2} xs={2} className="g-sm-5">
@@ -25,10 +25,13 @@ function ProductsArrangement({ products, loading,cardHeight,cardwidth }: PropTyp
 			</Row>
 			{loading === "idle" ||
 				(loading === "pending" && (
-					<p className="ms-auto mt-5 w-100">loading....</p>
+					<p className="my-5 text-cente fs-2 text-secondary text-center">loading....</p>
 				))}
 			{loading === "noMore" && (
-				<p className="my-5 text-center">no more products</p>
+				<p className="my-5 text-cente fs-2 text-secondary text-center">no more products</p>
+			)}
+			{loading === "no-products" && (
+				<p className="my-5 text-cente fs-2 text-secondary text-center">there is no matching products</p>
 			)}
 			{loading === "failed" && (
 				<Error title="404 not found">

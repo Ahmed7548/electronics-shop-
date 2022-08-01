@@ -1,4 +1,4 @@
-export type LoadingStatue = "idle" | "pending" | "succeeded" | "failed" | "noMore"
+export type LoadingStatus = "idle" | "pending" | "succeeded" | "failed" | "noMore"|"no-products"
 
 export interface Product {
 	id: number;

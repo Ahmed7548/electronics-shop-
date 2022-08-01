@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { RootState, useAppSelector } from "../store/app/store";
-import { LoadingStatue } from "../utils/types";
+import { LoadingStatus } from "../utils/types";
 import { Product } from "../utils/types";
 
 interface SelectorReturn {
 	products: Product[];
-	loading: LoadingStatue;
+	loading: LoadingStatus;
 }
 
 export type FetchProductCallBack = (
@@ -21,13 +21,13 @@ const useGetProducts = (
 	infiniteScrollCb: FetchProductCallBack,
 	searchParamKey?: string | null,
 	param?: string | null
-): [Product[], LoadingStatue] => {
+): [Product[], LoadingStatus] => {
 	const page = useRef(1);
 	const [searchParams] = useSearchParams();
 
 	const { products, loading } = useAppSelector(productsSelector);
 
-	console.log(products)
+	console.log(products);
 
 	const scrollHandler = (e: Event): void => {
 		const htmlElement = document.querySelector("html") as HTMLElement;
@@ -50,7 +50,7 @@ const useGetProducts = (
 	};
 
 	useEffect(() => {
-		if (loading === "noMore") {
+		if (loading === "noMore" || loading === "no-products") {
 			return;
 		}
 		document.addEventListener("scroll", scrollHandler);
