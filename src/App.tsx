@@ -17,6 +17,10 @@ import Product from "./pages/Product";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./components/layout/Footer";
+import PrivateRoute from "./components/PrivateRoute";
+import Login from "./pages/Login";
+import User from "./pages/User";
+import CheckOut from "./pages/CheckOut";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData);
@@ -55,6 +59,11 @@ function App() {
 					<Route path="store/product" element={<Product />} />
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
+					<Route element={<PrivateRoute />}>
+						<Route path="checkout" element={<CheckOut/>}/>
+						<Route path="user/:id" element={<User />} />
+					</Route>
+					<Route path="/login" element={<Login/>}/>
 				</Routes>
 			</Container>
 				<Footer/>
