@@ -64,6 +64,9 @@ function App() {
 						<Route path="user/:id" element={<User />} />
 					</Route>
 					<Route path="/login" element={<Login/>}/>
+					<Route path="*" element={<><Error title="page was not found">
+					page was not found
+					</Error></>} />
 				</Routes>
 			</Container>
 				<Footer/>

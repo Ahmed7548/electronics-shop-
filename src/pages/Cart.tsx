@@ -45,7 +45,7 @@ function Cart() {
 				) : (
 					<EmptyCart />
 				)}
-				<div className="d-flex justify-content-between align-items-ceter  pb-0 ">
+				<div className="d-flex justify-content-between align-items-ceter p-4  pb-0 ">
 					<Button variant="outline-success" onClick={keepShopping}>
 						{" "}
 						Keep Shopping
