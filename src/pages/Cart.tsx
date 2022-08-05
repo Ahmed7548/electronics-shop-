@@ -4,7 +4,7 @@ import { selectCartProducts } from "../store/slices/cartSlice";
 import EmptyCart from "../components/cart/EmptyCart";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/app/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Cart() {
 	const products = useAppSelector(selectCartProducts);
@@ -17,11 +17,19 @@ function Cart() {
 	);
 
 	console.log(totalPrice)
+	useEffect(() => {
+		window.sessionStorage.setItem("cart",JSON.stringify(products))
+		// console.log("here", products,JSON.parse(window.sessionStorage.getItem("cart")))
+	},[products])
 
-	const keepShopping = () => {
+	const keepShopping = ():void => {
 		// a better feeture is to return to what ever the past route is
 		navigate("/store");
 	};
+
+	const cheCkOut = ():void => {
+		
+	}
 
 	const cart=		products.map((product) => (
 						<CartProduct
@@ -51,7 +59,7 @@ function Cart() {
 						Keep Shopping
 					</Button>
 					{products.length > 0 && (
-						<Button variant="outline-dark"> Proceed To Checkout</Button>
+						<Button variant="outline-dark" onClick={cheCkOut}> Proceed To Checkout</Button>
 					)}
 				</div>
 			</div>

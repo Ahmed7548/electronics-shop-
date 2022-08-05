@@ -18,8 +18,7 @@ export const fetchProducts = createAsyncThunk(
 		thunkApi
 	): Promise<[Product[], number]> => {
     let getUrl = "/products?";
-    
-    
+
 		if (req.param) getUrl += `cat=${req.param}&`;
     if (req.search) getUrl += `name=${req.search}&`;
     

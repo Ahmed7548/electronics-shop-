@@ -21,12 +21,18 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./pages/Login";
 import User from "./pages/User";
 import CheckOut from "./pages/CheckOut";
+import { setCartFromSessionStorage } from "./store/slices/cartSlice";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData);
 	const dispatch = useAppDispatch();
 	useEffect(() => {
 		dispatch(fetchAppStartData());
+		const cartProducts = window.sessionStorage.getItem("cart")
+		if (cartProducts) {
+			console.log(cartProducts)
+			dispatch(setCartFromSessionStorage(JSON.parse(cartProducts)))
+		}
 	}, []);
 
 	if (appStartData.loading === "failed") {

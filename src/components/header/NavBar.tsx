@@ -1,7 +1,5 @@
-import React, {
+import  {
 	FormEvent,
-	MouseEventHandler,
-	useEffect,
 	useState,
 } from "react";
 import {
@@ -13,15 +11,12 @@ import {
 	Button,
 } from "react-bootstrap";
 import ShoppingCartButton from "../UI/ShoppingCartButton";
-import { NavLink, NavLinkProps, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { selectCartProducts } from "../../store/slices/cartSlice";
-import store, {
-	RootState,
-	useAppDispatch,
+import  {
 	useAppSelector,
 } from "../../store/app/store";
 import { Categories } from "../../store/slices/appStartSlice";
-import NavButton from "../UI/NavButton";
 import Sign from "./Sign";
 
 function NavBar({ categories }: { categories: Categories[] }) {
@@ -64,7 +59,7 @@ function NavBar({ categories }: { categories: Categories[] }) {
 						<Nav.Link to="/store" as={NavLink}>
 							Store
 						</Nav.Link>
-						<NavDropdown menuVariant="dark" title="categories">
+						<NavDropdown menuVariant="light" title="categories">
 							{categories.map((category) => (
 								<NavDropdown.Item
 									as={NavLink}

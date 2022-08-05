@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 import { Product } from "../../utils/types";
 
@@ -8,7 +8,7 @@ export type CartState = { product: Product; qty: number }[];
 const initialState:CartState=[]
 
 const cartSlice = createSlice({
-	name: "Cart",
+	name: "cart",
 	initialState,
 	reducers: {
 		addTocart(
@@ -49,12 +49,15 @@ const cartSlice = createSlice({
 				pordInCart.qty -= 1;
 			}
 		},
+		setCartFromSessionStorage(state, { payload: cart }) {
+			return cart 
+		}
 	},
 });
 
 export const selectCartProducts = (state: RootState) => state.cart;
 
-export const { addTocart, removeFromCart, decreaseAmountInCart,increaseAmountInCart,setQtyInCart } =
+export const { addTocart, removeFromCart, decreaseAmountInCart,increaseAmountInCart,setQtyInCart,setCartFromSessionStorage } =
 	cartSlice.actions;
 
 export default cartSlice.reducer;

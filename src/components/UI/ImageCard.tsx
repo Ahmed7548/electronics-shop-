@@ -11,7 +11,7 @@ const ImageCard = ({ data, className }: PropType) => {
 			className={`bc-img bc-img-contain image-card layer position-relative bg-white ${className}`}
 			style={{ backgroundImage: `url(${data.imageUrl})` }}
 		>
-			<Link to={`/store/${data.imageUrl}`} className="">
+			<Link to={`/store/${data.title}`} className="">
 				{data.title}
 			</Link>
 		</div>
