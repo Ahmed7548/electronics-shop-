@@ -1,7 +1,4 @@
-import  {
-	FormEvent,
-	useState,
-} from "react";
+import { FormEvent, useState } from "react";
 import {
 	Container,
 	Nav,
@@ -13,9 +10,7 @@ import {
 import ShoppingCartButton from "../UI/ShoppingCartButton";
 import { NavLink, useNavigate } from "react-router-dom";
 import { selectCartProducts } from "../../store/slices/cartSlice";
-import  {
-	useAppSelector,
-} from "../../store/app/store";
+import { useAppSelector } from "../../store/app/store";
 import { Categories } from "../../store/slices/appStartSlice";
 import Sign from "./Sign";
 
@@ -33,25 +28,22 @@ function NavBar({ categories }: { categories: Categories[] }) {
 
 	const cartItems = useAppSelector(selectCartProducts).length;
 	return (
-		<Navbar
-			className="bg-white shadow-sm mb-3"
-			collapseOnSelect
-			expand="md"
-		>
+		<Navbar className="bg-white shadow-sm mb-3" collapseOnSelect expand="md">
 			<Container fluid="lg" className="d-block">
 				<div className="d-flex mb-md-3 py-2 pb-md-0 justify-content-between align-items-center">
 					<Navbar.Brand as={NavLink} to="/" className="ps-2">
 						Electronics
 					</Navbar.Brand>
-				
+
 					<div className="d-flex">
-						<Sign auth={auth} user={{ name: "Ahmed", avatar: "...url", id: 1 }} />
-					<ShoppingCartButton number={cartItems} />
-					<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+						<ShoppingCartButton number={cartItems} />
+						<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 					</div>
 				</div>
-				<Navbar.Collapse id="responsive-navbar-nav" className="justify-content-between">
-					
+				<Navbar.Collapse
+					id="responsive-navbar-nav"
+					className="justify-content-between"
+				>
 					<Nav>
 						<Nav.Link to="/" as={NavLink}>
 							Home
@@ -74,7 +66,7 @@ function NavBar({ categories }: { categories: Categories[] }) {
 							About
 						</Nav.Link>
 					</Nav>
-					
+
 					<Form className="d-flex my-sm-3 my-md-0" onSubmit={searchHandler}>
 						<Form.Control
 							type="search"
@@ -90,6 +82,7 @@ function NavBar({ categories }: { categories: Categories[] }) {
 							Search
 						</Button>
 					</Form>
+					<Sign auth={auth} user={{ name: "Ahmed", avatar: "...url", id: 1 }} />
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

@@ -9,21 +9,20 @@ const Sign = ({
 	auth: boolean;
 	user: { name: string; avatar: string; id: number };
   }) => {
-  console.log(auth)
 	return (
 		<div className="d-flex align-items-center">
 			{!auth ? (
 				<>
 					<NavButton
-						to="login"
-						className="mx-md-1 ms-md-2"
-						variant="outline-dark"
+						to="auth/login"
+						className="mx-md-1 ms-md-2 my-2 my-md-0 border"
+						variant="light"
 					>
 						log in
 					</NavButton>
 					<NavButton
-						to="signup"
-						className="mx-md-1 mx-3 mx-md-1 me-md-2"
+						to="auth/signup"
+						className="mx-md-1 mx-3 mx-md-1 me-md-2 my-2 my-md-0"
 						variant="dark"
 					>
 						sign up

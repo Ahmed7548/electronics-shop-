@@ -11,7 +11,6 @@ interface PropType {
 	cardHeight?: string;
 }
 function ProductsArrangement({ products, loading,cardHeight,cardwidth }: PropType) {
-	console.log(loading)
 	return (
 		<>
 			<Row lg={4} md={3} sm={2} xs={2} className="g-sm-5">

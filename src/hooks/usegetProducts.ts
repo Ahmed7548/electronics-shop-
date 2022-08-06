@@ -27,7 +27,6 @@ const useGetProducts = (
 
 	const { products, loading } = useAppSelector(productsSelector);
 
-	console.log(products);
 
 	const scrollHandler = (e: Event): void => {
 		const htmlElement = document.querySelector("html") as HTMLElement;

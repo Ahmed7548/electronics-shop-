@@ -16,12 +16,6 @@ function Cart() {
 		}, 0)
 	);
 
-	console.log(totalPrice)
-	useEffect(() => {
-		window.sessionStorage.setItem("cart",JSON.stringify(products))
-		// console.log("here", products,JSON.parse(window.sessionStorage.getItem("cart")))
-	},[products])
-
 	const keepShopping = ():void => {
 		// a better feeture is to return to what ever the past route is
 		navigate("/store");
@@ -53,13 +47,13 @@ function Cart() {
 				) : (
 					<EmptyCart />
 				)}
-				<div className="d-flex justify-content-between align-items-ceter p-4  pb-0 ">
-					<Button variant="outline-success" onClick={keepShopping}>
+				<div className="d-flex justify-content-between align-items-ceter p-4  pb-0  ">
+					<Button variant="outline-success" className="mx-2" onClick={keepShopping}>
 						{" "}
 						Keep Shopping
 					</Button>
 					{products.length > 0 && (
-						<Button variant="outline-dark" onClick={cheCkOut}> Proceed To Checkout</Button>
+						<Button variant="outline-dark" className="mx-2" onClick={cheCkOut}> Proceed To Checkout</Button>
 					)}
 				</div>
 			</div>

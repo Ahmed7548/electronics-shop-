@@ -11,7 +11,7 @@ import { addAppListener, listenerMiddleware, startAppListening } from '../middle
 startAppListening({
   predicate: (action,curState,prevState) => {
     const prefix = action.type as string
-    const typePrefix=prefix.split("/")[0]
+    const typePrefix=prefix?.split("/")[0]
    return typePrefix==="cart" 
   },
   effect: (action, listenerApi) => {

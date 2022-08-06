@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -18,10 +18,12 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./components/layout/Footer";
 import PrivateRoute from "./components/PrivateRoute";
-import Login from "./pages/Login";
+import Login from "./components/auth/Login";
 import User from "./pages/User";
 import CheckOut from "./pages/CheckOut";
 import { setCartFromSessionStorage } from "./store/slices/cartSlice";
+import AuthContainer from "./components/auth/AuthContainer";
+import SignUp from "./components/auth/SignUp";
 
 function App() {
 	const appStartData = useAppSelector(selectAppStartData);
@@ -30,7 +32,6 @@ function App() {
 		dispatch(fetchAppStartData());
 		const cartProducts = window.sessionStorage.getItem("cart")
 		if (cartProducts) {
-			console.log(cartProducts)
 			dispatch(setCartFromSessionStorage(JSON.parse(cartProducts)))
 		}
 	}, []);
@@ -45,7 +46,6 @@ function App() {
 	}
 
 	if (appStartData.loading === "pending") {
-		console.log("here");
 		return (
 			<>
 				<NavBar categories={appStartData.categories} />
@@ -69,7 +69,11 @@ function App() {
 						<Route path="checkout" element={<CheckOut/>}/>
 						<Route path="user/:id" element={<User />} />
 					</Route>
-					<Route path="/login" element={<Login/>}/>
+					<Route path="/auth" element={<AuthContainer />}>
+						<Route path="login" element={<Login/>}/>
+						<Route path="signup" element={<SignUp />} />
+						<Route path="*" element={<><Navigate to="/auth/login"/></>}/>
+					</Route>
 					<Route path="*" element={<><Error title="page was not found">
 					page was not found
 					</Error></>} />

@@ -45,7 +45,6 @@ const productsSlice = createSlice({
 			(state, { payload: [products, page] }) => {
 				if (products.length === 0) {
 					if (page === 1) {
-						console.log(page)
 						state.loading = "no-products"
 						state.products = []
 						return

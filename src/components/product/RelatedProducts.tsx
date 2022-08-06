@@ -18,7 +18,6 @@ const RelatedProducts = ({ tags }: { tags: string }) => {
 			dispatch(fetchRelatedProducts({ tags, page }));
 		}
 	);
-	console.log(products);
 	return (
 		<>
 			<ProductsArrangement loading={loading} products={products} />

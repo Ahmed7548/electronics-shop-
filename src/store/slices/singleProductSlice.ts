@@ -54,7 +54,6 @@ export const fetchRelatedProducts = createAsyncThunk(
 
 		// by tags...
 		const { data } = await api.get(getUrl);
-		console.log(data)
 
 		return { data: data as Product[], page: page || 1 };
 	}

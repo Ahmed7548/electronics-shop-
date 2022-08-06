@@ -37,7 +37,6 @@ const ImageSlider = ({ height, images,style }: PropType) => {
 
 	const touchStartHandler = (e: React.TouchEvent<HTMLDivElement>) => {
 		startTouch.current = e.touches[0].clientX;
-		console.log(e.timeStamp)
 
 	};
 
@@ -56,7 +55,6 @@ const ImageSlider = ({ height, images,style }: PropType) => {
 	};
 
 	const touchEndHandler = (e: React.TouchEvent<HTMLDivElement>) => {
-		console.log(e.timeStamp)
 
 		if (sliderRef.current) {
 			setTouchSlide(0);
