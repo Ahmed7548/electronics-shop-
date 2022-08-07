@@ -26,6 +26,8 @@ import AuthContainer from "./components/auth/AuthContainer";
 import SignUp from "./components/auth/SignUp";
 
 function App() {
+
+
 	const appStartData = useAppSelector(selectAppStartData);
 	const dispatch = useAppDispatch();
 	useEffect(() => {
