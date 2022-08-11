@@ -5,9 +5,9 @@ import validator from "validator";
 import useValiodator from "../../hooks/useValidator";
 import InputGroup from "../UI/InputGroup";
 import { changeHandlerCreator } from "../../utils/helpers";
-import { GoogleLogin, CredentialResponse  } from "@react-oauth/google";
 import { authApi } from "../../API/api";
 import { AxiosError } from "axios";
+import GoogleButton from "../google/GoogleButton";
 
 
 enum Gender {
@@ -80,17 +80,6 @@ const SignUp = () => {
 		});
 	};
 
-	const googleLoginSuccess = async (response: CredentialResponse) => {
-		try {		
-	console.log("here")
-	const { data,status, } = await authApi.post("/google", { credential: response.credential })
-} catch (err) {
-	if (err instanceof AxiosError) {
-		setErrSignUp(err.response?.data.msg)
-			}
-			console.log(err)
-		}
-	}
 
 	return (
 		<>
@@ -170,8 +159,8 @@ const SignUp = () => {
 							already have acount <Link to="/auth/login">Login</Link>...
 						</Form.Text>
 						<div className="my-3 m-auto d-flex justify-content-center">
-							<GoogleLogin onSuccess={googleLoginSuccess} theme="filled_black" text="continue_with" />
-							</div>
+							<GoogleButton client_id={process.env.REACT_APP_GOOGLE_CLIENT_ID as string} theme="outline" type="standard" size="medium"/>
+						</div>
 					</div>
 				</Form>
 				{errSignUp && <div className="text-center"><small className="text-danger text-center">{errSignUp}</small></div>}

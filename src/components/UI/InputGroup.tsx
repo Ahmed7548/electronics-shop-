@@ -36,6 +36,8 @@ const InputGroup = ({
 		onChange(e)
 	}
 
+	let displayValid=!validity && clicked 
+
 	return (
 		<>
 			<FormGroup className={`mb-3 ${className}`}>
@@ -46,8 +48,9 @@ const InputGroup = ({
 					placeholder={placeholder}
 					value={value}
 					onChange={changeHandler}
+					className={displayValid? "invalid-input":""}
 				/>
-				{!validity && clicked && (
+				{displayValid&& (
 					<Form.Text className="text-danger">{msg}!</Form.Text>
 				)}
 			</FormGroup>

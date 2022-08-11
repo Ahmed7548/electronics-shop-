@@ -18,7 +18,7 @@ const QuantityController = ({ qty, increment, decrement,OnChangeQty,direction }:
   }
 
 	return (
-		<div className={`d-flex align-items-center ${direction||"flex-column"}  `}>
+		<div className={`d-flex align-items-center ${direction||"flex-column"} quantity-controller  `}>
 			<Button
 				variant="outline-dark"
 				className="p-0 text-center small-button "

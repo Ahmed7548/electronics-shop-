@@ -11,6 +11,8 @@ const ProductData = ({product}:{product:Product}) => {
   const dispatch= useAppDispatch()
 	const [qty, setQty] = useState(1);
 
+  console.log(qty)
+
   const IncrementHandler = () => {
 		setQty((prevState) => prevState + 1);
 	};
