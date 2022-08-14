@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import useValiodator from "../../hooks/useValidator";
 import validator from "validator";
-import AuthContainer from "./AuthContainer";
 import { Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import InputGroup from "../UI/InputGroup";
 import { changeHandlerCreator } from "../../utils/helpers";
+import ContinueWitGoogle from "../google/ContinueWitGoogle";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
-	const isEmailValid = useValiodator(
+	const [isEmailValid,setEmailValidity] = useValiodator(
 		(str: string) => validator.isEmail(str, {}),
 		email
 	);
 
 	const [password, setPassword] = useState("");
+	const [errSignIn,setErrorSignIn]= useState("")
 
 	return (
 		<>
@@ -23,7 +24,8 @@ const Login = () => {
 				<InputGroup
 					label="Email"
 					onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
-						setEmail
+						setEmail,
+						setEmailValidity
 					)}
 					validity={isEmailValid}
 					msg="invalid email"
@@ -54,7 +56,15 @@ const Login = () => {
 					<Form.Text className=" w-100">
 						don,t have acount <Link to="/auth/signup">sign up</Link> now
 					</Form.Text>
+					<div className="my-3 m-auto d-flex justify-content-center">
+					<ContinueWitGoogle setError={setErrorSignIn} text="signin_with"/>
+						</div>
 				</div>
+				{errSignIn && (
+					<div className="text-center">
+						<small className="text-danger text-center">{errSignIn}</small>
+					</div>
+				)}
 			</Card.Body>
 		</>
 	);

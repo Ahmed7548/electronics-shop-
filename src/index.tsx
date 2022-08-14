@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux"
 import store from "./store/app/store"
-import { GoogleOAuthProvider } from '@react-oauth/google'
 
 
 console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID,"google client id")

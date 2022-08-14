@@ -6,6 +6,8 @@ const useGoogleScript = () => {
 	useEffect(() => {
 		if (scriptLoaded) return;
 
+    if(document.getElementById("google-client-script")) return 
+
 		const googleScript = document.createElement("script");
 		googleScript.src = "https://accounts.google.com/gsi/client";
 		googleScript.async = true;

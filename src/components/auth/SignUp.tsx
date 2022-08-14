@@ -1,57 +1,49 @@
-import React, { useState } from "react";
-import { Card, Form, FormGroup, Col, Button } from "react-bootstrap";
+import React, { useState,useCallback } from "react";
+import { Card, Form, FormGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import validator from "validator";
 import useValiodator from "../../hooks/useValidator";
 import InputGroup from "../UI/InputGroup";
 import { changeHandlerCreator } from "../../utils/helpers";
-import { authApi } from "../../API/api";
-import { AxiosError } from "axios";
-import GoogleButton from "../google/GoogleButton";
-
-
-enum Gender {
-	MALE = "M",
-	FEMALE = "F",
-	OTHER = "O",
-}
+import ContinueWitGoogle from "../google/ContinueWitGoogle";
 
 const SignUp = () => {
+	const nameValidator= useCallback((str:string)=>validator.isAlpha(str, "en-US", { ignore: "-" }),[])
 	const [firstName, setFirstName] = useState("");
-	const isFirstNameVAlid = useValiodator(
-		(str: string) => validator.isAlpha(str, "en-US", { ignore: "-" }),
+	const [isFirstNameVAlid, setfirstNameValidity] = useValiodator(
+		nameValidator,
 		firstName
 	);
 
 	const [lastName, setLastName] = useState("");
-	const isLastNameVAlid = useValiodator(
-		(str: string) => validator.isAlpha(str, "en-US", { ignore: "-" }),
+	const [isLastNameVAlid, setLastNameValidity] = useValiodator(
+		nameValidator,
 		lastName
 	);
 
 	const [email, setEmail] = useState("");
-	const isEmailValid = useValiodator(
-		(str: string) => validator.isEmail(str, {}),
+	const emailValidator= useCallback((str:string)=>validator.isEmail(str, {}),[])
+	const [isEmailValid, setEmailValidity] = useValiodator(
+		emailValidator,
 		email
 	);
 
 	const [password, setPassword] = useState("");
-	const isStrongPassword = useValiodator(
-		(str: string) =>
-			validator.isStrongPassword(str, {
-				minLength: 6,
-				minNumbers: 1,
-				minSymbols: 1,
-				minUppercase: 1,
-			}),
+	const passwordValidator = useCallback((str: string) => validator.isStrongPassword(str, {
+		minLength: 6,
+		minNumbers: 1,
+		minSymbols: 1,
+		minUppercase: 1,
+	}),[])
+	const [isStrongPassword, setPasswordValidity] = useValiodator(
+		passwordValidator,
 		password
 	);
 
 	const [confirmedPassword, setConfirmedPassword] = useState("");
 	const [confirmedPassValidity, setConfirmedPassVAlidity] = useState(true);
 
-	const [errSignUp,setErrSignUp]=useState("")
-
+	const [errSignUp, setErrSignUp] = useState("");
 
 	let submitDisabled = !(
 		isFirstNameVAlid &&
@@ -92,7 +84,7 @@ const SignUp = () => {
 							label="First Name"
 							onChange={changeHandlerCreator<
 								React.ChangeEvent<HTMLInputElement>
-							>(setFirstName)}
+							>(setFirstName, setfirstNameValidity)}
 							placeholder="first name"
 							type="text"
 							validity={isFirstNameVAlid}
@@ -104,7 +96,7 @@ const SignUp = () => {
 							label="Last Name"
 							onChange={changeHandlerCreator<
 								React.ChangeEvent<HTMLInputElement>
-							>(setLastName)}
+							>(setLastName, setLastNameValidity)}
 							placeholder="last name"
 							type="text"
 							validity={isLastNameVAlid}
@@ -115,7 +107,8 @@ const SignUp = () => {
 					<InputGroup
 						label="Email"
 						onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
-							setEmail
+							setEmail,
+							setEmailValidity
 						)}
 						placeholder="email"
 						type="email"
@@ -126,7 +119,8 @@ const SignUp = () => {
 					<InputGroup
 						label="Password"
 						onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
-							setPassword
+							setPassword,
+							setPasswordValidity
 						)}
 						placeholder="password"
 						type="password"
@@ -137,7 +131,8 @@ const SignUp = () => {
 					<InputGroup
 						label="Confirm Password"
 						onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
-							setConfirmedPassword
+							setConfirmedPassword,
+							setConfirmedPassVAlidity
 						)}
 						placeholder="confirm password"
 						type="password"
@@ -145,7 +140,7 @@ const SignUp = () => {
 						value={confirmedPassword}
 						msg="confirmed password is not the same as the password"
 					/>
-				
+
 					<div className="my-3 text-center">
 						<Button
 							disabled={submitDisabled}
@@ -159,11 +154,15 @@ const SignUp = () => {
 							already have acount <Link to="/auth/login">Login</Link>...
 						</Form.Text>
 						<div className="my-3 m-auto d-flex justify-content-center">
-							<GoogleButton client_id={process.env.REACT_APP_GOOGLE_CLIENT_ID as string} theme="outline" type="standard" size="medium"/>
+					<ContinueWitGoogle setError={setErrSignUp} text="signup_with"/>
 						</div>
 					</div>
 				</Form>
-				{errSignUp && <div className="text-center"><small className="text-danger text-center">{errSignUp}</small></div>}
+				{errSignUp && (
+					<div className="text-center">
+						<small className="text-danger text-center">{errSignUp}</small>
+					</div>
+				)}
 			</Card.Body>
 		</>
 	);
