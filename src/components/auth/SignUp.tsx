@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import React, { useState,useCallback, useRef } from "react";
 import { Card, Form, FormGroup, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import validator from "validator";
@@ -6,9 +6,12 @@ import useValiodator from "../../hooks/useValidator";
 import InputGroup from "../UI/InputGroup";
 import { changeHandlerCreator } from "../../utils/helpers";
 import ContinueWitGoogle from "../google/ContinueWitGoogle";
+import ImageInput from "../UI/ImageInput";
 
 const SignUp = () => {
-	const nameValidator= useCallback((str:string)=>validator.isAlpha(str, "en-US", { ignore: "-" }),[])
+  const imagRef = useRef<{image:File|{}}>({image:{}})
+	
+	const nameValidator = useCallback((str: string) => validator.isAlpha(str, "en-US", { ignore: "-" }), [])
 	const [firstName, setFirstName] = useState("");
 	const [isFirstNameVAlid, setfirstNameValidity] = useValiodator(
 		nameValidator,
@@ -53,6 +56,9 @@ const SignUp = () => {
 		confirmedPassValidity
 	);
 
+
+
+
 	const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (password.trim() !== confirmedPassword.trim()) {
@@ -69,15 +75,24 @@ const SignUp = () => {
 			email,
 			password,
 			confirmedPassword,
+			image:imagRef.current?.image
 		});
 	};
 
+	const ImageInputHandler = (image: File) => {
+		if (imagRef.current) {
+			console.log(imagRef.current)
+			imagRef.current.image=image
+		}
+	}
 
 	return (
 		<>
 			<Card.Header className="fs-3 text-center">SignUp</Card.Header>
 			<Card.Body>
 				<Form onSubmit={submitHandler}>
+					<ImageInput onInput={ImageInputHandler}/>
+
 					<FormGroup className="d-flex justify-content-between">
 						<InputGroup
 							className="me-1"
