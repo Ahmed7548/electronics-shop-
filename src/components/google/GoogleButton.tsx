@@ -17,7 +17,7 @@ const GoogleButton = (props: PropType) => {
 	const isGoogleScriptLoaded = useGoogleScript();
   const divRef = useRef<HTMLDivElement>(null);
 
-	const successHandle = useCallback((credentials:string|undefined)=>{onSuccsess(credentials)}, [onSuccsess]);
+	const successHandle = useCallback(onSuccsess, [onSuccsess]);
 
 	useEffect(() => {
 		if (typeof window === "undefined" || !window.google || !divRef.current)
@@ -27,6 +27,8 @@ const GoogleButton = (props: PropType) => {
 			window.google.accounts.id.initialize({
 				client_id: client_id,
 				callback: async (res) => {
+					// RESPONSE RETURNED FROM GOOGLE AUTH API;
+					console.log(res)
 					await successHandle(res.credential);
 				},
 			});

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Placeholder } from "react-bootstrap";
+import { Form, FormGroup, InputGroup as BSInputGroup } from "react-bootstrap";
 
 interface PropType {
 	label: string;
@@ -10,6 +10,7 @@ interface PropType {
 	validity: boolean;
 	msg: string;
 	className?: string;
+	inputText?: string;
 }
 
 const InputGroup = ({
@@ -21,7 +22,10 @@ const InputGroup = ({
 	validity,
 	msg,
 	className,
+	inputText,
 }: PropType) => {
+	let _inputGroup: React.ReactNode = "";
+
 	const [clicked, setClicked] = useState(false);
 
 	const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -33,26 +37,40 @@ const InputGroup = ({
 		if (clicked === false) {
 			setClicked(true);
 		}
-		onChange(e)
-	}
+		onChange(e);
+	};
 
-	let displayValid=!validity && clicked 
+	let inputValid = !validity && clicked;
+
+	const _formControl = (
+		<Form.Control
+			onBlur={blurHandler}
+			type={type}
+			placeholder={placeholder}
+			value={value}
+			onChange={changeHandler}
+			className={inputValid ? "invalid-input" : ""}
+		/>
+	);
+
+	if (inputText) {
+		console.log(inputText)
+		_inputGroup = (
+			<BSInputGroup>
+				<BSInputGroup.Text>{inputText}</BSInputGroup.Text>
+				{_formControl}
+			</BSInputGroup>
+		);
+	} else {
+		_inputGroup = _formControl;
+	}
 
 	return (
 		<>
 			<FormGroup className={`mb-3 ${className}`}>
 				<Form.Label>{label}</Form.Label>
-				<Form.Control
-					onBlur={blurHandler}
-					type={type}
-					placeholder={placeholder}
-					value={value}
-					onChange={changeHandler}
-					className={displayValid? "invalid-input":""}
-				/>
-				{displayValid&& (
-					<Form.Text className="text-danger">{msg}!</Form.Text>
-				)}
+				{_inputGroup}
+				{inputValid && <Form.Text className="text-danger">{msg}!</Form.Text>}
 			</FormGroup>
 		</>
 	);

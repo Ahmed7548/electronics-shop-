@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useCallback } from "react";
 import useValiodator from "../../hooks/useValidator";
 import validator from "validator";
 import { Card, Button, Form } from "react-bootstrap";
@@ -8,9 +8,10 @@ import { changeHandlerCreator } from "../../utils/helpers";
 import ContinueWitGoogle from "../google/ContinueWitGoogle";
 
 const Login = () => {
+	const emailValidator=useCallback((str: string) => validator.isEmail(str, {}),[])
 	const [email, setEmail] = useState("");
 	const [isEmailValid,setEmailValidity] = useValiodator(
-		(str: string) => validator.isEmail(str, {}),
+		emailValidator,
 		email
 	);
 

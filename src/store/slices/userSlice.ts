@@ -1,4 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { AxiosResponse } from "axios";
+import { authApi } from "../../API/api";
+import { SignInResponse } from "../../utils/types";
 import { RootState } from "../app/store";
 
 interface Order {
@@ -37,6 +40,12 @@ const initialState:User = {
   isLogedIn: false
 }
 
+
+export const continueWithGoogle = createAsyncThunk("user/login", async ({credentials}:{credentials:string}) => {
+  const response = await authApi.post<SignInResponse, AxiosResponse<SignInResponse, { credentials: string }>>("/google", {
+    credentials
+  })
+})
 
 
 const userSlice = createSlice({

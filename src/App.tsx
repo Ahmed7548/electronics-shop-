@@ -15,7 +15,7 @@ import {
 import Error from "./components/Error";
 import Product from "./pages/Product";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/layout/Footer";
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/auth/Login";
@@ -24,17 +24,18 @@ import CheckOut from "./pages/CheckOut";
 import { setCartFromSessionStorage } from "./store/slices/cartSlice";
 import AuthContainer from "./components/auth/AuthContainer";
 import SignUp from "./components/auth/SignUp";
+import CheckOutProvider from "./store/contexts/CheckOutContext";
+import CheckOutCash from "./components/checkout/CheckOutCash";
+import CardPayment from "./components/checkout/CardPayment";
 
 function App() {
-
-
 	const appStartData = useAppSelector(selectAppStartData);
 	const dispatch = useAppDispatch();
 	useEffect(() => {
 		dispatch(fetchAppStartData());
-		const cartProducts = window.sessionStorage.getItem("cart")
+		const cartProducts = window.sessionStorage.getItem("cart");
 		if (cartProducts) {
-			dispatch(setCartFromSessionStorage(JSON.parse(cartProducts)))
+			dispatch(setCartFromSessionStorage(JSON.parse(cartProducts)));
 		}
 	}, []);
 
@@ -68,20 +69,42 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route element={<PrivateRoute />}>
-						<Route path="checkout" element={<CheckOut/>}/>
+						<Route
+							path="checkout"
+							element={
+								<CheckOutProvider>
+									<CheckOut />
+								</CheckOutProvider>
+							}
+						>
+							<Route path="" element={<CheckOutCash />} />
+							<Route path="card" element={<CardPayment/>}/>
+						</Route>
 						<Route path="user/:id" element={<User />} />
 					</Route>
 					<Route path="/auth" element={<AuthContainer />}>
-						<Route path="login" element={<Login/>}/>
+						<Route path="login" element={<Login />} />
 						<Route path="signup" element={<SignUp />} />
-						<Route path="*" element={<><Navigate to="/auth/login"/></>}/>
+						<Route
+							path="*"
+							element={
+								<>
+									<Navigate to="/auth/login" />
+								</>
+							}
+						/>
 					</Route>
-					<Route path="*" element={<><Error title="page was not found">
-					page was not found
-					</Error></>} />
+					<Route
+						path="*"
+						element={
+							<>
+								<Error title="page was not found">page was not found</Error>
+							</>
+						}
+					/>
 				</Routes>
 			</Container>
-				<Footer/>
+			<Footer />
 			<ToastContainer
 				position="top-center"
 				autoClose={1000}
@@ -93,9 +116,7 @@ function App() {
 				draggable
 				pauseOnHover
 				theme="dark"
-
 			/>
-
 		</>
 	);
 }

@@ -4,7 +4,7 @@ import ProductsArrangement from "../components/layout/ProductsGrid";
 import useGetProducts from "../hooks/usegetProducts";
 import { useAppDispatch } from "../store/app/store";
 import { fetchProducts, productSelector } from "../store/slices/productsSlice";
-import {toast, ToastContainer} from "react-toastify"	
+
 
 function Store() {
 	const dispatch = useAppDispatch();

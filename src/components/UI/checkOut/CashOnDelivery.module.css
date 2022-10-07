@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  width: fit-content;
+  font-size: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.money,.truck{
+  font-size: 1.5rem;
+}
+
+
+
+@media (min-width: 768px) {
+	.money,.truck{
+    font-size: 2.5rem;
+  }
+  .container{
+    font-size: 0.8rem;
+  }
+}
