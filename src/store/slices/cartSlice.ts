@@ -51,13 +51,16 @@ const cartSlice = createSlice({
 		},
 		setCartFromSessionStorage(state, { payload: cart }) {
 			return cart 
+		},
+		emptyCart(state) {
+			return []
 		}
 	},
 });
 
 export const selectCartProducts = (state: RootState) => state.cart;
 
-export const { addTocart, removeFromCart, decreaseAmountInCart,increaseAmountInCart,setQtyInCart,setCartFromSessionStorage } =
+export const { addTocart, removeFromCart, decreaseAmountInCart,increaseAmountInCart,setQtyInCart,setCartFromSessionStorage,emptyCart } =
 	cartSlice.actions;
 
 export default cartSlice.reducer;

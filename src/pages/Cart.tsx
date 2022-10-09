@@ -2,9 +2,9 @@ import { Button } from "react-bootstrap";
 import CartProduct from "../components/cart/CartProduct";
 import { selectCartProducts } from "../store/slices/cartSlice";
 import EmptyCart from "../components/cart/EmptyCart";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/app/store";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 function Cart() {
 	const products = useAppSelector(selectCartProducts);
@@ -53,7 +53,7 @@ function Cart() {
 						Keep Shopping
 					</Button>
 					{products.length > 0 && (
-						<Button variant="outline-dark" className="mx-2" onClick={cheCkOut}> Proceed To Checkout</Button>
+						<Link to="/checkout"><Button variant="outline-dark" className="mx-2" onClick={cheCkOut}> Proceed To Checkout</Button></Link>
 					)}
 				</div>
 			</div>

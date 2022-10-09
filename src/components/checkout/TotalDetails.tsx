@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useContext,useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
+import { CheckOutContext } from "../../store/contexts/CheckOutContext";
 
 const TotalDetails = () => {
+	const [btnDis,setBtnDis]=useState(false)
+
+	const {
+		coupon: [, setCoupon],
+	} = useContext(CheckOutContext);
+
+
+	const couponChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setCoupon(e.target.value)
+	}
+
+
+	// todo ->check for coupon validity by the api and if valid update the discount part 
+	const CheckForCouponValidity = () => {
+		console.log("api request")
+		setBtnDis(true)
+		setTimeout(() => {
+			setBtnDis(false)
+		},1000)
+	}
+
 	return (
 		<div>
 			<Row className="mt-2">
@@ -36,19 +58,25 @@ const TotalDetails = () => {
 					<small className="fs-5">100.00$</small>
 				</Col>
 			</Row>
-			<Form>
-				<Row className="align-items-end justify-content-between">
+			<fieldset>
+				<Row className="align-items-end justify-content-between g-sm-3 g-4">
 					<Col xs={8}>
 						<Form.Group>
 							<Form.Label>Coupon</Form.Label>
-							<Form.Control type="text" placeholder="Enter Coupon" />
+							<Form.Control
+								type="text"
+								placeholder="Enter Coupon"
+								onChange={couponChangeHandler}
+							/>
 						</Form.Group>
 					</Col>
-					<Col xs={4}>
-						<Button variant="outline-dark">Apply</Button>
+					<Col xs={4} className="d-flex justify-content-end">
+						<Button variant="outline-dark" onClick={CheckForCouponValidity} disabled={btnDis}>
+							Apply
+						</Button>
 					</Col>
 				</Row>
-			</Form>
+			</fieldset>
 		</div>
 	);
 };

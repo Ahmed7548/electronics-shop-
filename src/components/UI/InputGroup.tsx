@@ -54,7 +54,6 @@ const InputGroup = ({
 	);
 
 	if (inputText) {
-		console.log(inputText)
 		_inputGroup = (
 			<BSInputGroup>
 				<BSInputGroup.Text>{inputText}</BSInputGroup.Text>

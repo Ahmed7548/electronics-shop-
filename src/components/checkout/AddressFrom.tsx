@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { CheckOutContext } from "../../store/contexts/CheckOutContext";
 import validator from "validator";
 import { Form, Row, Col } from "react-bootstrap";
@@ -6,7 +6,11 @@ import useValiodator from "../../hooks/useValidator";
 import CustomInputGroup from "../UI/InputGroup";
 import { changeHandlerCreator } from "../../utils/helpers";
 
-const AddressFrom = () => {
+interface Props {
+	setAdressFormValidity: React.Dispatch<React.SetStateAction<boolean>> 
+}
+
+const AddressFrom = ({ setAdressFormValidity }: Props) => {
 	const {
 		adress: [adress, setAdress],
 		city: [city, setCity],
@@ -27,14 +31,17 @@ const AddressFrom = () => {
 		(value: string) => validator.isAlphanumeric(value),
 		[]
 	);
-	const [cityVAlidity, setCityVAlidity] = useValiodator(cityValidator, city);
+	const [cityValidity, setCityVAlidity] = useValiodator(cityValidator, city);
 
 	// zip
 	const zipValidator = useCallback((value: string) => {
 		return validator.isNumeric(value) && value.length === 5;
-  }, []);
-  
-  const [zipValidity,setZipValidity]= useValiodator(zipValidator,zip)
+	}, []);
+	const [zipValidity, setZipValidity] = useValiodator(zipValidator, zip);
+
+	useEffect(() => {
+		setAdressFormValidity(adressValidity && cityValidity && zipValidity);
+	}, [setAdressFormValidity, cityValidity, zipValidity, adressValidity]);
 
 	return (
 		<>
@@ -56,7 +63,7 @@ const AddressFrom = () => {
 						label="City"
 						msg="City Required"
 						type="text"
-						validity={cityVAlidity}
+						validity={cityValidity}
 						placeholder="Enter a descriptive address"
 						value={city}
 						onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
@@ -76,18 +83,21 @@ const AddressFrom = () => {
 						onChange={changeHandlerCreator<React.ChangeEvent<HTMLInputElement>>(
 							setZip,
 							setZipValidity,
-							(value: string) =>
-              {
-                if (value === "") {
-                  return false;
-                }
-                return value.length > 5 || !validator.isNumeric(value)
-              }
+							(value: string) => {
+								if (value === "") {
+									return false;
+								}
+								return value.length > 5 || !validator.isNumeric(value);
+							}
 						)}
 					/>
 				</Col>
 
-				<Form.Group className="col-12 col-md-4" as={Col} controlId="formGridState">
+				<Form.Group
+					className="col-12 col-md-4"
+					as={Col}
+					controlId="formGridState"
+				>
 					<Form.Label>Governerate</Form.Label>
 					<Form.Select
 						value={gov}
